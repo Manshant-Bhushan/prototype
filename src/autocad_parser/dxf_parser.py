@@ -2,7 +2,7 @@ import ezdxf
 from typing import Dict, Optional
 from pathlib import Path
 
-def parse_dxf(dxf_path: str) -> Dict[str, Optional[float]]:
+def parse_floor_plan(dxf_path: str) -> Dict[str, Optional[float]]:
     """
     Extract metrics from DXF file using ezdxf.
     Returns: {
@@ -64,5 +64,5 @@ def _get_height(msp) -> Optional[float]:
 if __name__ == "__main__":
     # Example usage
     dxf_path = Path(r"D:\Project\Manshant_Project\prototype\sample_files\1\floor_plan\09-08-2025_PHYTON PROTOTYPE_4M.dxf")
-    metrics = parse_dxf(dxf_path)
+    metrics = parse_floor_plan(dxf_path)
     print("Extracted metrics:", metrics)

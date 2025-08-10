@@ -1,43 +1,59 @@
-import warnings
+import sys
 from pathlib import Path
-from src.pdf_parser.pdf_to_json import extract_by_laws
-from src.autocad_parser.dwg_parser import parse_floor_plan
-from src.gis_processor.shp_processor import validate_plot
-from src.compliance_engine.validator import check_compliance
+from src.utils.logger import setup_logger
+from src.pdf_parser import extract_by_laws
+from src.autocad_parser import parse_floor_plan
+from src.gis_processor import validate_plot
+from src.compliance_engine import check_compliance
 
-# Disable warnings
-warnings.filterwarnings("ignore")
+logger = setup_logger()
 
 def main():
     try:
-        # 1. Extract by-laws
-        by_laws = extract_by_laws("D:\Project\Manshant_Project\prototype\sample_files\1\by-laws\Bylaw_rule.pdf")
+        logger.info("Starting building compliance check")
         
-        # 2. Parse AutoCAD
-        dxf_metrics = parse_floor_plan(r"D:\Project\Manshant_Project\prototype\sample_files\1\floor_plan\09-08-2025_PHYTON PROTOTYPE_4M.dxf")
+        # 1. Load by-laws
+        logger.info("Extracting by-laws from PDF")
+        by_laws = extract_by_laws("data/by_laws.pdf")
         
-        # 3. Validate against plot boundaries
+        # 2. Parse AutoCAD file
+        logger.info("Processing floor plan")
+        dxf_metrics = parse_floor_plan("data/floor_plan.dwg")
+        
+        # 3. Validate against plot
+        logger.info("Validating plot boundaries")
         gis_result = validate_plot(
-            "data/plot_utm.shp", 
+            "data/plot_utm.shp",
             dxf_metrics,
-            target_crs="EPSG:32644"  # UTM Zone 44N (India)
+            target_crs="EPSG:32644"  # UTM Zone 44N
         )
         
-        # 4. Final compliance check
-        approval, report = check_compliance(
-            dxf_metrics=dxf_metrics,
-            gis_result=gis_result,
-            by_laws=by_laws
-        )
+        # 4. Check compliance
+        logger.info("Running compliance checks")
+        approved, violations = check_compliance(dxf_metrics, gis_result, by_laws)
         
-        print("\n=== Final Result ===")
-        print(f"Approved: {approval}")
-        print("Violations:" if not approval else "Compliant with:")
-        for item in report:
-            print(f"- {item}")
-
+        # 5. Generate report
+        print("\n=== COMPLIANCE REPORT ===")
+        print(f"Result: {'APPROVED' if approved else 'REJECTED'}")
+        print(f"Plot Area: {gis_result['plot_area_m2']:.2f} m²")
+        print(f"Footprint Area: {dxf_metrics['footprint_area_m2']:.2f} m²")
+        print(f"Total Built Area: {dxf_metrics['total_area_m2']:.2f} m²")
+        
+        if not approved:
+            print("\nVIOLATIONS DETECTED:")
+            for i, violation in enumerate(violations, 1):
+                print(f"{i}. {violation}")
+        else:
+            print("\nAll checks passed successfully!")
+            
+        return 0 if approved else 1
+        
+    except FileNotFoundError as e:
+        logger.error(f"Missing file: {e.filename}")
+        return 1
     except Exception as e:
-        print(f"Pipeline failed: {type(e).__name__}: {e}")
+        logger.error(f"Unexpected error: {str(e)}", exc_info=True)
+        return 1
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
