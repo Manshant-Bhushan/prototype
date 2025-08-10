@@ -85,12 +85,12 @@ def process_gis_data(shp_base_path: str, dxf_metrics: Dict[str, float]) -> Dict[
 if __name__ == "__main__":
     # Test configuration
     TEST_PATH = r"D:\Project\Manshant_Project\prototype\sample_files\2\gim_file\boundary"
-    # TEST_METRICS = {
-    #     "setback_front": 261240.89,
-    #     "setback_rear": 141817.91,
-    #     "setback_left": 127997.56,
-    #     "setback_right": 223015.96
-    # }
+    TEST_METRICS = {
+        "setback_front": 261240.89,
+        "setback_rear": 141817.91,
+        "setback_left": 127997.56,
+        "setback_right": 223015.96
+    }
     
     # 1. First verify path
     path_status = validate_shapefile_path(TEST_PATH)
