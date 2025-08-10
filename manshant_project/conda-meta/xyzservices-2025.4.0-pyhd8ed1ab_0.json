@@ -1,0 +1,206 @@
+{
+  "build": "pyhd8ed1ab_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "constrains": [],
+  "depends": [
+    "python >=3.8"
+  ],
+  "extracted_package_dir": "D:\\Anaconda\\pkgs\\xyzservices-2025.4.0-pyhd8ed1ab_0",
+  "files": [
+    "share/xyzservices/providers.json",
+    "Lib/site-packages/xyzservices-2025.4.0.dist-info/INSTALLER",
+    "Lib/site-packages/xyzservices-2025.4.0.dist-info/LICENSE",
+    "Lib/site-packages/xyzservices-2025.4.0.dist-info/METADATA",
+    "Lib/site-packages/xyzservices-2025.4.0.dist-info/RECORD",
+    "Lib/site-packages/xyzservices-2025.4.0.dist-info/REQUESTED",
+    "Lib/site-packages/xyzservices-2025.4.0.dist-info/WHEEL",
+    "Lib/site-packages/xyzservices-2025.4.0.dist-info/direct_url.json",
+    "Lib/site-packages/xyzservices-2025.4.0.dist-info/top_level.txt",
+    "Lib/site-packages/xyzservices/__init__.py",
+    "Lib/site-packages/xyzservices/data/__init__.py",
+    "Lib/site-packages/xyzservices/data/providers.json",
+    "Lib/site-packages/xyzservices/lib.py",
+    "Lib/site-packages/xyzservices/providers.py",
+    "Lib/site-packages/xyzservices/tests/__init__.py",
+    "Lib/site-packages/xyzservices/tests/test_lib.py",
+    "Lib/site-packages/xyzservices/tests/test_providers.py",
+    "Lib/site-packages/xyzservices/__pycache__/__init__.cpython-312.pyc",
+    "Lib/site-packages/xyzservices/data/__pycache__/__init__.cpython-312.pyc",
+    "Lib/site-packages/xyzservices/__pycache__/lib.cpython-312.pyc",
+    "Lib/site-packages/xyzservices/__pycache__/providers.cpython-312.pyc",
+    "Lib/site-packages/xyzservices/tests/__pycache__/__init__.cpython-312.pyc",
+    "Lib/site-packages/xyzservices/tests/__pycache__/test_lib.cpython-312.pyc",
+    "Lib/site-packages/xyzservices/tests/__pycache__/test_providers.cpython-312.pyc"
+  ],
+  "fn": "xyzservices-2025.4.0-pyhd8ed1ab_0.conda",
+  "license": "BSD-3-Clause",
+  "link": {
+    "source": "D:\\Anaconda\\pkgs\\xyzservices-2025.4.0-pyhd8ed1ab_0",
+    "type": 1
+  },
+  "md5": "5663fa346821cd06dc1ece2c2600be2c",
+  "name": "xyzservices",
+  "noarch": "python",
+  "package_tarball_full_path": "D:\\Anaconda\\pkgs\\xyzservices-2025.4.0-pyhd8ed1ab_0.conda",
+  "package_type": "noarch_python",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "share/xyzservices/providers.json",
+        "path_type": "hardlink",
+        "sha256": "148d39f2e15dd434abec4043b50b51749eca22029956a47a708169fe900ac9da",
+        "sha256_in_prefix": "148d39f2e15dd434abec4043b50b51749eca22029956a47a708169fe900ac9da",
+        "size_in_bytes": 788420
+      },
+      {
+        "_path": "site-packages/xyzservices-2025.4.0.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "sha256_in_prefix": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "size_in_bytes": 5
+      },
+      {
+        "_path": "site-packages/xyzservices-2025.4.0.dist-info/LICENSE",
+        "path_type": "hardlink",
+        "sha256": "d866b8c6c0e77e67b2c3f6d2cca771ffc05f65bbde1674dcf2e0ec55abb6ad61",
+        "sha256_in_prefix": "d866b8c6c0e77e67b2c3f6d2cca771ffc05f65bbde1674dcf2e0ec55abb6ad61",
+        "size_in_bytes": 1517
+      },
+      {
+        "_path": "site-packages/xyzservices-2025.4.0.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "58e1c869ba383a423298f96d61d744c40159eacdbbabaaf3593e4bc598392927",
+        "sha256_in_prefix": "58e1c869ba383a423298f96d61d744c40159eacdbbabaaf3593e4bc598392927",
+        "size_in_bytes": 4080
+      },
+      {
+        "_path": "site-packages/xyzservices-2025.4.0.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "4c70fdcedeca91df6625ac2d54e8022940f4971ec06726e5f3237218f6b7209f",
+        "sha256_in_prefix": "4c70fdcedeca91df6625ac2d54e8022940f4971ec06726e5f3237218f6b7209f",
+        "size_in_bytes": 1878
+      },
+      {
+        "_path": "site-packages/xyzservices-2025.4.0.dist-info/REQUESTED",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "site-packages/xyzservices-2025.4.0.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "3fd8f0fa01237bc07207bfe15e82029c7b550ab13031087eeb7d2d2af4167a17",
+        "sha256_in_prefix": "3fd8f0fa01237bc07207bfe15e82029c7b550ab13031087eeb7d2d2af4167a17",
+        "size_in_bytes": 91
+      },
+      {
+        "_path": "site-packages/xyzservices-2025.4.0.dist-info/direct_url.json",
+        "path_type": "hardlink",
+        "sha256": "00ced75ffe547fecc72ac646ece8c483133a3bb56e4b7aeab2aebec537aa79c7",
+        "sha256_in_prefix": "00ced75ffe547fecc72ac646ece8c483133a3bb56e4b7aeab2aebec537aa79c7",
+        "size_in_bytes": 107
+      },
+      {
+        "_path": "site-packages/xyzservices-2025.4.0.dist-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "d31199af918719e5438e07764e67077748cd822c5e173090acf32fb966baee3a",
+        "sha256_in_prefix": "d31199af918719e5438e07764e67077748cd822c5e173090acf32fb966baee3a",
+        "size_in_bytes": 12
+      },
+      {
+        "_path": "site-packages/xyzservices/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "b7ca696000db859dd3077a6864553f4f96673608529d9195a50b791f2736527c",
+        "sha256_in_prefix": "b7ca696000db859dd3077a6864553f4f96673608529d9195a50b791f2736527c",
+        "size_in_bytes": 256
+      },
+      {
+        "_path": "site-packages/xyzservices/data/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "site-packages/xyzservices/data/providers.json",
+        "path_type": "hardlink",
+        "sha256": "148d39f2e15dd434abec4043b50b51749eca22029956a47a708169fe900ac9da",
+        "sha256_in_prefix": "148d39f2e15dd434abec4043b50b51749eca22029956a47a708169fe900ac9da",
+        "size_in_bytes": 788420
+      },
+      {
+        "_path": "site-packages/xyzservices/lib.py",
+        "path_type": "hardlink",
+        "sha256": "98168ed10e702fdd5e28f7a43cbd3590c77132378c82c8d613cfd0f9630bbec6",
+        "sha256_in_prefix": "98168ed10e702fdd5e28f7a43cbd3590c77132378c82c8d613cfd0f9630bbec6",
+        "size_in_bytes": 21476
+      },
+      {
+        "_path": "site-packages/xyzservices/providers.py",
+        "path_type": "hardlink",
+        "sha256": "1f59a0c3a2f7822693b30bf70d1dc54ea868e18981b69ae22fcc31acb6f77661",
+        "sha256_in_prefix": "1f59a0c3a2f7822693b30bf70d1dc54ea868e18981b69ae22fcc31acb6f77661",
+        "size_in_bytes": 333
+      },
+      {
+        "_path": "site-packages/xyzservices/tests/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "site-packages/xyzservices/tests/test_lib.py",
+        "path_type": "hardlink",
+        "sha256": "18206828b617413b7691af8df1fd9e7c352714314395890e2578c99e81b6eda1",
+        "sha256_in_prefix": "18206828b617413b7691af8df1fd9e7c352714314395890e2578c99e81b6eda1",
+        "size_in_bytes": 9103
+      },
+      {
+        "_path": "site-packages/xyzservices/tests/test_providers.py",
+        "path_type": "hardlink",
+        "sha256": "ba43ca320d0f91254406f3298b015484f604f24143db907404104d2e3928bec9",
+        "sha256_in_prefix": "ba43ca320d0f91254406f3298b015484f604f24143db907404104d2e3928bec9",
+        "size_in_bytes": 7147
+      },
+      {
+        "_path": "Lib/site-packages/xyzservices/__pycache__/__init__.cpython-312.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/xyzservices/data/__pycache__/__init__.cpython-312.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/xyzservices/__pycache__/lib.cpython-312.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/xyzservices/__pycache__/providers.cpython-312.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/xyzservices/tests/__pycache__/__init__.cpython-312.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/xyzservices/tests/__pycache__/test_lib.cpython-312.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "Lib/site-packages/xyzservices/tests/__pycache__/test_providers.cpython-312.pyc",
+        "path_type": "pyc_file"
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "ac6d4d4133b1e0f69075158cdf00fccad20e29fc6cc45faa480cec37a84af6ae",
+  "size": 49477,
+  "subdir": "noarch",
+  "timestamp": 1745598150000,
+  "url": "https://conda.anaconda.org/conda-forge/noarch/xyzservices-2025.4.0-pyhd8ed1ab_0.conda",
+  "version": "2025.4.0"
+}

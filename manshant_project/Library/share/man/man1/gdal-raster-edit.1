@@ -1,0 +1,183 @@
+.\" Man page generated from reStructuredText.
+.
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.TH "GDAL-RASTER-EDIT" "1" "Jul 12, 2025" "" "GDAL"
+.SH NAME
+gdal-raster-edit \- Edit in place a raster dataset
+.sp
+Added in version 3.11.
+
+.SH SYNOPSIS
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+Usage: gdal raster edit [OPTIONS] <DATASET>
+
+Edit a raster dataset.
+
+Positional arguments:
+  \-\-dataset <DATASET>       Dataset (to be updated in\-place, unless \-\-auxiliary) [required]
+
+Common Options:
+  \-h, \-\-help                Display help message and exit
+  \-\-json\-usage              Display usage as JSON document and exit
+  \-\-config <KEY>=<VALUE>    Configuration option [may be repeated]
+  \-\-progress                Display progress bar
+
+Options:
+  \-\-auxiliary               Ask for an auxiliary .aux.xml file to be edited
+  \-\-crs <CRS>               Override CRS (without reprojection)
+  \-\-bbox <BBOX>             Bounding box as xmin,ymin,xmax,ymax
+  \-\-nodata <NODATA>         Assign a specified nodata value to output bands (\(aqnone\(aq, numeric value, \(aqnan\(aq, \(aqinf\(aq, \(aq\-inf\(aq)
+  \-\-metadata <KEY>=<VALUE>  Add/update dataset metadata item [may be repeated]
+  \-\-unset\-metadata <KEY>    Remove dataset metadata item [may be repeated]
+  \-\-stats                   Compute statistics, using all pixels
+                            Mutually exclusive with \-\-approx\-stats
+  \-\-approx\-stats            Compute statistics, using a subset of pixels
+                            Mutually exclusive with \-\-stats
+  \-\-hist                    Compute histogram
+.EE
+.UNINDENT
+.UNINDENT
+.SH DESCRIPTION
+.sp
+\fBgdal raster edit\fP can be used to edit a raster dataset.
+.sp
+This subcommand is also available as a potential step of \fI\%gdal raster pipeline\fP
+.INDENT 0.0
+.TP
+.B \-\-dataset <DATASET>
+Dataset name, to be updated in\-place, unless \fI\%\-\-auxiliary\fP is set. Required.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-auxiliary
+Force opening the dataset in read\-only mode. For drivers that implement the
+Persistent Auxiliary Metadata (PAM) mechanism, changes will be
+saved in an auxiliary side car file of extension \fB\&.aux.xml\fP\&.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-crs <CRS>
+Override CRS, without reprojecting.
+.sp
+The coordinate reference systems that can be passed are anything supported by the
+\fI\%OGRSpatialReference::SetFromUserInput()\fP call, which includes EPSG Projected,
+Geographic or Compound CRS (i.e. EPSG:4296), a well known text (WKT) CRS definition,
+PROJ.4 declarations, or the name of a .prj file containing a WKT CRS definition.
+.sp
+\fBnull\fP or \fBnone\fP can be specified to unset an existing CRS.
+.sp
+Note that the spatial extent is also left unchanged.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-bbox <xmin>,<ymin>,<xmax>,ymax>
+Override the spatial bounding box, in CRS units, without reprojecting or subsetting.
+\(aqx\(aq is longitude values for geographic CRS and easting for projected CRS.
+\(aqy\(aq is latitude values for geographic CRS and northing for projected CRS.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-nodata <value>
+Override nodata value.
+.sp
+\fBnull\fP or \fBnone\fP can be specified to unset an existing nodata value.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-metadata <KEY>=<VALUE>
+Add/update metadata item, at the dataset level.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-unset\-metadata <KEY>
+Remove metadata item, at the dataset level.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-stats
+Compute raster band statistics for all bands.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-approx\-stats
+Compute raster band statistics for all bands. They may be computed
+based on overviews or a subset of all tiles. Useful if you are in a
+hurry and don\(aqt need precise stats.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-hist
+Compute histogram information for all bands.
+.UNINDENT
+.SH EXAMPLES
+.SS Example 1: Override (without reprojecting) the CRS of a dataset
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+$ gdal raster edit \-\-crs=EPSG:32632 my.tif
+.EE
+.UNINDENT
+.UNINDENT
+.SS Example 2: Override (without reprojecting or subsetting) the bounding box of a dataset
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+$ gdal raster edit \-\-bbox=2,49,3,50 my.tif
+.EE
+.UNINDENT
+.UNINDENT
+.SS Example 3: Add a metadata item
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+$ gdal raster edit \-\-metadata AUTHOR=EvenR my.tif
+.EE
+.UNINDENT
+.UNINDENT
+.SS Example 4: Remove a metadata item
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+$ gdal raster edit \-\-unset\-metadata AUTHOR my.tif
+.EE
+.UNINDENT
+.UNINDENT
+.SH AUTHOR
+Even Rouault <even.rouault@spatialys.com>
+.SH COPYRIGHT
+1998-2025
+.\" Generated by docutils manpage writer.
+.

@@ -1,0 +1,402 @@
+.\" Man page generated from reStructuredText.
+.
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.TH "GDAL-VECTOR-PIPELINE" "1" "Jul 12, 2025" "" "GDAL"
+.SH NAME
+gdal-vector-pipeline \- Process a vector dataset
+.sp
+Added in version 3.11.
+
+.SH SYNOPSIS
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+Usage: gdal vector pipeline [OPTIONS] <PIPELINE>
+
+Process a vector dataset.
+
+Positional arguments:
+
+Common Options:
+  \-h, \-\-help              Display help message and exit
+  \-\-json\-usage            Display usage as JSON document and exit
+  \-\-config <KEY>=<VALUE>  Configuration option [may be repeated]
+  \-\-progress              Display progress bar
+
+<PIPELINE> is of the form: read|concat [READ\-OPTIONS] ( ! <STEP\-NAME> [STEP\-OPTIONS] )* ! write [WRITE\-OPTIONS]
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+A pipeline chains several steps, separated with the \fI!\fP (exclamation mark) character.
+The first step must be \fBread\fP or \fBconcat\fP, and the last one \fBwrite\fP\&. Each step has its
+own positional or non\-positional arguments. Apart from \fBread\fP, \fBconcat\fP and \fBwrite\fP,
+all other steps can potentially be used several times in a pipeline.
+.sp
+Potential steps are:
+.INDENT 0.0
+.IP \(bu 2
+read
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* read [OPTIONS] <INPUT>
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Read a vector dataset.
+
+Positional arguments:
+  \-i, \-\-input <INPUT>                       Input vector datasets [required]
+
+Options:
+  \-l, \-\-layer, \-\-input\-layer <INPUT\-LAYER>  Input layer name(s) [may be repeated]
+
+Advanced Options:
+  \-\-if, \-\-input\-format <INPUT\-FORMAT>       Input formats [may be repeated]
+  \-\-oo, \-\-open\-option <KEY>=<VALUE>         Open options [may be repeated]
+.EE
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.IP \(bu 2
+concat
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* concat [OPTIONS] <INPUT>...
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Concatenate vector datasets.
+
+Positional arguments:
+  \-i, \-\-input <INPUT>                                        Input vector datasets [1.. values] [required]
+
+Options:
+  \-l, \-\-layer, \-\-input\-layer <INPUT\-LAYER>                   Input layer name(s) [may be repeated]
+  \-\-mode <MODE>                                              Determine the strategy to create output layers from source layers . MODE=merge\-per\-layer\-name|stack|single (default: merge\-per\-layer\-name)
+  \-\-output\-layer <OUTPUT\-LAYER>                              Name of the output vector layer (single mode), or template to name the output vector layers (stack mode)
+  \-\-source\-layer\-field\-name <SOURCE\-LAYER\-FIELD\-NAME>        Name of the new field to add to contain identificoncation of the source layer, with value determined from \(aqsource\-layer\-field\-content\(aq
+  \-\-source\-layer\-field\-content <SOURCE\-LAYER\-FIELD\-CONTENT>  A string, possibly using {AUTO_NAME}, {DS_NAME}, {DS_BASENAME}, {DS_INDEX}, {LAYER_NAME}, {LAYER_INDEX}
+  \-\-field\-strategy <FIELD\-STRATEGY>                          How to determine target fields from source fields. FIELD\-STRATEGY=union|intersection (default: union)
+  \-s, \-\-src\-crs <SRC\-CRS>                                    Source CRS
+  \-d, \-\-dst\-crs <DST\-CRS>                                    Destination CRS
+
+Advanced Options:
+  \-\-if, \-\-input\-format <INPUT\-FORMAT>                        Input formats [may be repeated]
+  \-\-oo, \-\-open\-option <KEY>=<VALUE>                          Open options [may be repeated]
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Details for options can be found in \fI\%gdal vector concat\fP\&.
+.INDENT 0.0
+.IP \(bu 2
+clip
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* clip [OPTIONS]
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Clip a vector dataset.
+
+Options:
+  \-\-active\-layer <ACTIVE\-LAYER>    Set active layer (if not specified, all)
+  \-\-bbox <BBOX>                    Clipping bounding box as xmin,ymin,xmax,ymax
+                                   Mutually exclusive with \-\-geometry, \-\-like
+  \-\-bbox\-crs <BBOX\-CRS>            CRS of clipping bounding box
+  \-\-geometry <GEOMETRY>            Clipping geometry (WKT or GeoJSON)
+                                   Mutually exclusive with \-\-bbox, \-\-like
+  \-\-geometry\-crs <GEOMETRY\-CRS>    CRS of clipping geometry
+  \-\-like <DATASET>                 Dataset to use as a template for bounds
+                                   Mutually exclusive with \-\-bbox, \-\-geometry
+  \-\-like\-sql <SELECT\-STATEMENT>    SELECT statement to run on the \(aqlike\(aq dataset
+                                   Mutually exclusive with \-\-like\-where
+  \-\-like\-layer <LAYER\-NAME>        Name of the layer of the \(aqlike\(aq dataset
+  \-\-like\-where <WHERE\-EXPRESSION>  WHERE SQL clause to run on the \(aqlike\(aq dataset
+                                   Mutually exclusive with \-\-like\-sql
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Details for options can be found in \fI\%gdal vector clip\fP\&.
+.INDENT 0.0
+.IP \(bu 2
+edit
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* edit [OPTIONS]
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Edit metadata of a vector dataset.
+
+Options:
+  \-\-active\-layer <ACTIVE\-LAYER>    Set active layer (if not specified, all)
+  \-\-geometry\-type <GEOMETRY\-TYPE>  Layer geometry type
+  \-\-crs <CRS>                      Override CRS (without reprojection)
+  \-\-metadata <KEY>=<VALUE>         Add/update dataset metadata item [may be repeated]
+  \-\-unset\-metadata <KEY>           Remove dataset metadata item [may be repeated]
+  \-\-layer\-metadata <KEY>=<VALUE>   Add/update layer metadata item [may be repeated]
+  \-\-unset\-layer\-metadata <KEY>     Remove layer metadata item [may be repeated]
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Details for options can be found in \fI\%gdal vector edit\fP\&.
+.INDENT 0.0
+.IP \(bu 2
+filter
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* filter [OPTIONS]
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Filter a vector dataset.
+
+Options:
+  \-\-active\-layer <ACTIVE\-LAYER>  Set active layer (if not specified, all)
+  \-\-bbox <BBOX>                  Bounding box as xmin,ymin,xmax,ymax
+  \-\-where <WHERE>|@<filename>    Attribute query in a restricted form of the queries used in the SQL WHERE statement
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Details for options can be found in \fI\%gdal vector filter\fP\&.
+.INDENT 0.0
+.IP \(bu 2
+geom
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* geom <COMMAND> [OPTIONS]
+where <COMMAND> is one of:
+  \- buffer:              Compute a buffer around geometries of a vector dataset.
+  \- explode\-collections: Explode geometries of type collection of a vector dataset.
+  \- make\-valid:          Fix validity of geometries of a vector dataset.
+  \- segmentize:          Segmentize geometries of a vector dataset.
+  \- set\-type:            Modify the geometry type of a vector dataset.
+  \- simplify:            Simplify geometries of a vector dataset.
+  \- swap\-xy:             Swap X and Y coordinates of geometries of a vector dataset.
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Details for options can be found in \fI\%gdal vector geom\fP\&.
+.INDENT 0.0
+.IP \(bu 2
+reproject
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* reproject [OPTIONS]
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Reproject a vector dataset.
+
+Options:
+  \-\-active\-layer <ACTIVE\-LAYER>  Set active layer (if not specified, all)
+  \-s, \-\-src\-crs <SRC\-CRS>        Source CRS
+  \-d, \-\-dst\-crs <DST\-CRS>        Destination CRS [required]
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Details for options can be found in \fI\%gdal vector reproject\fP\&.
+.INDENT 0.0
+.IP \(bu 2
+select
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* select [OPTIONS] <FIELDS>
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Select a subset of fields from a vector dataset.
+
+Positional arguments:
+  \-\-fields <FIELDS>              Fields to select (or exclude if \-\-exclude) [may be repeated] [required]
+
+Options:
+  \-\-active\-layer <ACTIVE\-LAYER>  Set active layer (if not specified, all)
+  \-\-exclude                      Exclude specified fields
+                                 Mutually exclusive with \-\-ignore\-missing\-fields
+  \-\-ignore\-missing\-fields        Ignore missing fields
+                                 Mutually exclusive with \-\-exclude
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Details for options can be found in \fI\%gdal vector select\fP\&.
+.INDENT 0.0
+.IP \(bu 2
+sql
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* sql [OPTIONS] <statement>|@<filename>
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Apply SQL statement(s) to a dataset.
+
+Positional arguments:
+  \-\-sql <statement>|@<filename>      SQL statement(s) [may be repeated] [required]
+
+Options:
+  \-l, \-\-output\-layer <OUTPUT\-LAYER>  Output layer name(s) [may be repeated]
+  \-\-dialect <DIALECT>                SQL dialect (e.g. OGRSQL, SQLITE)
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Details for options can be found in \fI\%gdal vector sql\fP\&.
+.INDENT 0.0
+.IP \(bu 2
+write
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* write [OPTIONS] <OUTPUT>
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Write a vector dataset.
+
+Positional arguments:
+  \-o, \-\-output <OUTPUT>                                Output vector dataset [required]
+
+Options:
+  \-f, \-\-of, \-\-format, \-\-output\-format <OUTPUT\-FORMAT>  Output format (\(dqGDALG\(dq allowed)
+  \-\-co, \-\-creation\-option <KEY>=<VALUE>                Creation option [may be repeated]
+  \-\-lco, \-\-layer\-creation\-option <KEY>=<VALUE>         Layer creation option [may be repeated]
+  \-\-overwrite                                          Whether overwriting existing output is allowed
+  \-\-update                                             Whether to open existing dataset in update mode
+  \-\-overwrite\-layer                                    Whether overwriting existing layer is allowed
+  \-\-append                                             Whether appending to existing layer is allowed
+  \-l, \-\-output\-layer <OUTPUT\-LAYER>                    Output layer name
+.EE
+.UNINDENT
+.UNINDENT
+.SH DESCRIPTION
+.sp
+\fBgdal vector pipeline\fP can be used to process a vector dataset and
+perform various processing steps.
+.SH GDALG OUTPUT (ON-THE-FLY / STREAMED DATASET)
+.sp
+A pipeline can be serialized as a JSON file using the \fBGDALG\fP output format.
+The resulting file can then be opened as a vector dataset using the
+\fI\%GDALG: GDAL Streamed Algorithm\fP driver, and apply the specified pipeline in a on\-the\-fly /
+streamed way.
+.sp
+The \fBcommand_line\fP member of the JSON file should nominally be the whole command
+line without the final \fBwrite\fP step, and is what is generated by
+\fBgdal vector pipeline ! .... ! write out.gdalg.json\fP\&.
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+{
+    \(dqtype\(dq: \(dqgdal_streamed_alg\(dq,
+    \(dqcommand_line\(dq: \(dqgdal vector pipeline ! read in.gpkg ! reproject \-\-dst\-crs=EPSG:32632\(dq
+}
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+The final \fBwrite\fP step can be added but if so it must explicitly specify the
+\fBstream\fP output format and a non\-significant output dataset name.
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+{
+    \(dqtype\(dq: \(dqgdal_streamed_alg\(dq,
+    \(dqcommand_line\(dq: \(dqgdal vector pipeline ! read in.gpkg ! reproject \-\-dst\-crs=EPSG:32632 ! write \-\-output\-format=streamed streamed_dataset\(dq
+}
+.EE
+.UNINDENT
+.UNINDENT
+.SH EXAMPLES
+.SS Example 1: Reproject a GeoPackage file to CRS EPSG:32632 (\(dqWGS 84 / UTM zone 32N\(dq)
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+$ gdal vector pipeline \-\-progress ! read in.gpkg ! reproject \-\-dst\-crs=EPSG:32632 ! write out.gpkg \-\-overwrite
+.EE
+.UNINDENT
+.UNINDENT
+.SS Example 2: Serialize the command of a reprojection of a GeoPackage file in a GDALG file, and later read it
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+$ gdal vector pipeline \-\-progress ! read in.gpkg ! reproject \-\-dst\-crs=EPSG:32632 ! write in_epsg_32632.gdalg.json \-\-overwrite
+$ gdal vector info in_epsg_32632.gdalg.json
+.EE
+.UNINDENT
+.UNINDENT
+.SS Example 3: None
+.sp
+Union 2 source shapefiles (with similar structure), reproject them to EPSG:32632, keep only cities larger than 1 million inhabitants and write to a GeoPackage
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+$ gdal vector pipeline \-\-progress ! concat \-\-single \-\-dst\-crs=EPSG:32632 france.shp belgium.shp ! filter \-\-where \(dqpop > 1e6\(dq ! write out.gpkg \-\-overwrite
+.EE
+.UNINDENT
+.UNINDENT
+.SH AUTHOR
+Even Rouault <even.rouault@spatialys.com>
+.SH COPYRIGHT
+1998-2025
+.\" Generated by docutils manpage writer.
+.

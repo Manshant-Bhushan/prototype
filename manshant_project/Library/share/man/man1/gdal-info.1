@@ -1,0 +1,435 @@
+.\" Man page generated from reStructuredText.
+.
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.TH "GDAL-INFO" "1" "Jul 12, 2025" "" "GDAL"
+.SH NAME
+gdal-info \- Get information on a dataset
+.sp
+Added in version 3.11.
+
+.sp
+Acts as a shortcut for \fI\%gdal raster info\fP or
+\fI\%gdal vector info\fP depending on the nature of the specified dataset.
+.SH SYNOPSIS
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+
+.EE
+.UNINDENT
+.UNINDENT
+.SH EXAMPLES
+.SS Example 1: Getting information on the file \fButmsmall.tif\fP (with JSON output)
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+$ gdal info utmsmall.tif
+{
+  \(dqdescription\(dq:\(dqutmsmall.tif\(dq,
+  \(dqdriverShortName\(dq:\(dqGTiff\(dq,
+  \(dqdriverLongName\(dq:\(dqGeoTIFF\(dq,
+  \(dqfiles\(dq:[
+    \(dqutmsmall.tif\(dq
+  ],
+  \(dqsize\(dq:[
+    100,
+    100
+  ],
+  \(dqcoordinateSystem\(dq:{
+    \(dqwkt\(dq:\(dqPROJCRS[\e\(dqNAD27 / UTM zone 11N\e\(dq,\en    BASEGEOGCRS[\e\(dqNAD27\e\(dq,\en        DATUM[\e\(dqNorth American Datum 1927\e\(dq,\en            ELLIPSOID[\e\(dqClarke 1866\e\(dq,6378206.4,294.978698213898,\en                LENGTHUNIT[\e\(dqmetre\e\(dq,1]]],\en        PRIMEM[\e\(dqGreenwich\e\(dq,0,\en            ANGLEUNIT[\e\(dqdegree\e\(dq,0.0174532925199433]],\en        ID[\e\(dqEPSG\e\(dq,4267]],\en    CONVERSION[\e\(dqTransverse Mercator\e\(dq,\en        METHOD[\e\(dqTransverse Mercator\e\(dq,\en            ID[\e\(dqEPSG\e\(dq,9807]],\en        PARAMETER[\e\(dqLatitude of natural origin\e\(dq,0,\en            ANGLEUNIT[\e\(dqdegree\e\(dq,0.0174532925199433],\en            ID[\e\(dqEPSG\e\(dq,8801]],\en        PARAMETER[\e\(dqLongitude of natural origin\e\(dq,\-117,\en            ANGLEUNIT[\e\(dqdegree\e\(dq,0.0174532925199433],\en            ID[\e\(dqEPSG\e\(dq,8802]],\en        PARAMETER[\e\(dqScale factor at natural origin\e\(dq,0.9996,\en            SCALEUNIT[\e\(dqunity\e\(dq,1],\en            ID[\e\(dqEPSG\e\(dq,8805]],\en        PARAMETER[\e\(dqFalse easting\e\(dq,500000,\en            LENGTHUNIT[\e\(dqmetre\e\(dq,1],\en            ID[\e\(dqEPSG\e\(dq,8806]],\en        PARAMETER[\e\(dqFalse northing\e\(dq,0,\en            LENGTHUNIT[\e\(dqmetre\e\(dq,1],\en            ID[\e\(dqEPSG\e\(dq,8807]]],\en    CS[Cartesian,2],\en        AXIS[\e\(dqeasting\e\(dq,east,\en            ORDER[1],\en            LENGTHUNIT[\e\(dqmetre\e\(dq,1]],\en        AXIS[\e\(dqnorthing\e\(dq,north,\en            ORDER[2],\en            LENGTHUNIT[\e\(dqmetre\e\(dq,1]],\en    ID[\e\(dqEPSG\e\(dq,26711]]\(dq,
+    \(dqdataAxisToSRSAxisMapping\(dq:[
+      1,
+      2
+    ]
+  },
+  \(dqgeoTransform\(dq:[
+    440720.0,
+    60.0,
+    0.0,
+    3751320.0,
+    0.0,
+    \-60.0
+  ],
+  \(dqmetadata\(dq:{
+    \(dq\(dq:{
+      \(dqAREA_OR_POINT\(dq:\(dqArea\(dq
+    },
+    \(dqIMAGE_STRUCTURE\(dq:{
+      \(dqINTERLEAVE\(dq:\(dqBAND\(dq
+    }
+  },
+  \(dqcornerCoordinates\(dq:{
+    \(dqupperLeft\(dq:[
+      440720.0,
+      3751320.0
+    ],
+    \(dqlowerLeft\(dq:[
+      440720.0,
+      3745320.0
+    ],
+    \(dqlowerRight\(dq:[
+      446720.0,
+      3745320.0
+    ],
+    \(dqupperRight\(dq:[
+      446720.0,
+      3751320.0
+    ],
+    \(dqcenter\(dq:[
+      443720.0,
+      3748320.0
+    ]
+  },
+  \(dqwgs84Extent\(dq:{
+    \(dqtype\(dq:\(dqPolygon\(dq,
+    \(dqcoordinates\(dq:[
+      [
+        [
+          \-117.6420428,
+          33.9023684
+        ],
+        [
+          \-117.6416377,
+          33.848257
+        ],
+        [
+          \-117.5767844,
+          33.8485775
+        ],
+        [
+          \-117.5771485,
+          33.9026895
+        ],
+        [
+          \-117.6420428,
+          33.9023684
+        ]
+      ]
+    ]
+  },
+  \(dqbands\(dq:[
+    {
+      \(dqband\(dq:1,
+      \(dqblock\(dq:[
+        100,
+        81
+      ],
+      \(dqtype\(dq:\(dqByte\(dq,
+      \(dqcolorInterpretation\(dq:\(dqGray\(dq,
+      \(dqmetadata\(dq:{
+      }
+    }
+  ],
+  \(dqstac\(dq:{
+    \(dqproj:shape\(dq:[
+      100,
+      100
+    ],
+    \(dqproj:wkt2\(dq:\(dqPROJCRS[\e\(dqNAD27 / UTM zone 11N\e\(dq,\en    BASEGEOGCRS[\e\(dqNAD27\e\(dq,\en        DATUM[\e\(dqNorth American Datum 1927\e\(dq,\en            ELLIPSOID[\e\(dqClarke 1866\e\(dq,6378206.4,294.978698213898,\en                LENGTHUNIT[\e\(dqmetre\e\(dq,1]]],\en        PRIMEM[\e\(dqGreenwich\e\(dq,0,\en            ANGLEUNIT[\e\(dqdegree\e\(dq,0.0174532925199433]],\en        ID[\e\(dqEPSG\e\(dq,4267]],\en    CONVERSION[\e\(dqTransverse Mercator\e\(dq,\en        METHOD[\e\(dqTransverse Mercator\e\(dq,\en            ID[\e\(dqEPSG\e\(dq,9807]],\en        PARAMETER[\e\(dqLatitude of natural origin\e\(dq,0,\en            ANGLEUNIT[\e\(dqdegree\e\(dq,0.0174532925199433],\en            ID[\e\(dqEPSG\e\(dq,8801]],\en        PARAMETER[\e\(dqLongitude of natural origin\e\(dq,\-117,\en            ANGLEUNIT[\e\(dqdegree\e\(dq,0.0174532925199433],\en            ID[\e\(dqEPSG\e\(dq,8802]],\en        PARAMETER[\e\(dqScale factor at natural origin\e\(dq,0.9996,\en            SCALEUNIT[\e\(dqunity\e\(dq,1],\en            ID[\e\(dqEPSG\e\(dq,8805]],\en        PARAMETER[\e\(dqFalse easting\e\(dq,500000,\en            LENGTHUNIT[\e\(dqmetre\e\(dq,1],\en            ID[\e\(dqEPSG\e\(dq,8806]],\en        PARAMETER[\e\(dqFalse northing\e\(dq,0,\en            LENGTHUNIT[\e\(dqmetre\e\(dq,1],\en            ID[\e\(dqEPSG\e\(dq,8807]]],\en    CS[Cartesian,2],\en        AXIS[\e\(dqeasting\e\(dq,east,\en            ORDER[1],\en            LENGTHUNIT[\e\(dqmetre\e\(dq,1]],\en        AXIS[\e\(dqnorthing\e\(dq,north,\en            ORDER[2],\en            LENGTHUNIT[\e\(dqmetre\e\(dq,1]],\en    ID[\e\(dqEPSG\e\(dq,26711]]\(dq,
+    \(dqproj:epsg\(dq:26711,
+    \(dqproj:projjson\(dq:{
+      \(dq$schema\(dq:\(dqhttps://proj.org/schemas/v0.7/projjson.schema.json\(dq,
+      \(dqtype\(dq:\(dqProjectedCRS\(dq,
+      \(dqname\(dq:\(dqNAD27 / UTM zone 11N\(dq,
+      \(dqbase_crs\(dq:{
+        \(dqtype\(dq:\(dqGeographicCRS\(dq,
+        \(dqname\(dq:\(dqNAD27\(dq,
+        \(dqdatum\(dq:{
+          \(dqtype\(dq:\(dqGeodeticReferenceFrame\(dq,
+          \(dqname\(dq:\(dqNorth American Datum 1927\(dq,
+          \(dqellipsoid\(dq:{
+            \(dqname\(dq:\(dqClarke 1866\(dq,
+            \(dqsemi_major_axis\(dq:6378206.4,
+            \(dqinverse_flattening\(dq:294.978698213898
+          }
+        },
+        \(dqcoordinate_system\(dq:{
+          \(dqsubtype\(dq:\(dqellipsoidal\(dq,
+          \(dqaxis\(dq:[
+            {
+              \(dqname\(dq:\(dqGeodetic latitude\(dq,
+              \(dqabbreviation\(dq:\(dqLat\(dq,
+              \(dqdirection\(dq:\(dqnorth\(dq,
+              \(dqunit\(dq:\(dqdegree\(dq
+            },
+            {
+              \(dqname\(dq:\(dqGeodetic longitude\(dq,
+              \(dqabbreviation\(dq:\(dqLon\(dq,
+              \(dqdirection\(dq:\(dqeast\(dq,
+              \(dqunit\(dq:\(dqdegree\(dq
+            }
+          ]
+        },
+        \(dqid\(dq:{
+          \(dqauthority\(dq:\(dqEPSG\(dq,
+          \(dqcode\(dq:4267
+        }
+      },
+      \(dqconversion\(dq:{
+        \(dqname\(dq:\(dqTransverse Mercator\(dq,
+        \(dqmethod\(dq:{
+          \(dqname\(dq:\(dqTransverse Mercator\(dq,
+          \(dqid\(dq:{
+            \(dqauthority\(dq:\(dqEPSG\(dq,
+            \(dqcode\(dq:9807
+          }
+        },
+        \(dqparameters\(dq:[
+          {
+            \(dqname\(dq:\(dqLatitude of natural origin\(dq,
+            \(dqvalue\(dq:0,
+            \(dqunit\(dq:\(dqdegree\(dq,
+            \(dqid\(dq:{
+              \(dqauthority\(dq:\(dqEPSG\(dq,
+              \(dqcode\(dq:8801
+            }
+          },
+          {
+            \(dqname\(dq:\(dqLongitude of natural origin\(dq,
+            \(dqvalue\(dq:\-117,
+            \(dqunit\(dq:\(dqdegree\(dq,
+            \(dqid\(dq:{
+              \(dqauthority\(dq:\(dqEPSG\(dq,
+              \(dqcode\(dq:8802
+            }
+          },
+          {
+            \(dqname\(dq:\(dqScale factor at natural origin\(dq,
+            \(dqvalue\(dq:0.9996,
+            \(dqunit\(dq:\(dqunity\(dq,
+            \(dqid\(dq:{
+              \(dqauthority\(dq:\(dqEPSG\(dq,
+              \(dqcode\(dq:8805
+            }
+          },
+          {
+            \(dqname\(dq:\(dqFalse easting\(dq,
+            \(dqvalue\(dq:500000,
+            \(dqunit\(dq:\(dqmetre\(dq,
+            \(dqid\(dq:{
+              \(dqauthority\(dq:\(dqEPSG\(dq,
+              \(dqcode\(dq:8806
+            }
+          },
+          {
+            \(dqname\(dq:\(dqFalse northing\(dq,
+            \(dqvalue\(dq:0,
+            \(dqunit\(dq:\(dqmetre\(dq,
+            \(dqid\(dq:{
+              \(dqauthority\(dq:\(dqEPSG\(dq,
+              \(dqcode\(dq:8807
+            }
+          }
+        ]
+      },
+      \(dqcoordinate_system\(dq:{
+        \(dqsubtype\(dq:\(dqCartesian\(dq,
+        \(dqaxis\(dq:[
+          {
+            \(dqname\(dq:\(dqEasting\(dq,
+            \(dqabbreviation\(dq:\(dq\(dq,
+            \(dqdirection\(dq:\(dqeast\(dq,
+            \(dqunit\(dq:\(dqmetre\(dq
+          },
+          {
+            \(dqname\(dq:\(dqNorthing\(dq,
+            \(dqabbreviation\(dq:\(dq\(dq,
+            \(dqdirection\(dq:\(dqnorth\(dq,
+            \(dqunit\(dq:\(dqmetre\(dq
+          }
+        ]
+      },
+      \(dqid\(dq:{
+        \(dqauthority\(dq:\(dqEPSG\(dq,
+        \(dqcode\(dq:26711
+      }
+    },
+    \(dqproj:transform\(dq:[
+      440720.0,
+      60.0,
+      0.0,
+      3751320.0,
+      0.0,
+      \-60.0
+    ],
+    \(dqraster:bands\(dq:[
+      {
+        \(dqdata_type\(dq:\(dquint8\(dq
+      }
+    ],
+    \(dqeo:bands\(dq:[
+      {
+        \(dqname\(dq:\(dqb1\(dq,
+        \(dqdescription\(dq:\(dqGray\(dq
+      }
+    ]
+  }
+}
+.EE
+.UNINDENT
+.UNINDENT
+.SS Example 2: Getting information on the file \fBpoly.gpkg\fP (with text output), listing all features
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+$ gdal vector info \-\-format=text \-\-features poly.gpkg
+INFO: Open of \(gapoly.gpkg\(aq
+      using driver \(gaGPKG\(aq successful.
+
+Layer name: poly
+Metadata:
+  DBF_DATE_LAST_UPDATE=2018\-08\-02
+Geometry: Polygon
+Feature Count: 10
+Extent: (478315.531250, 4762880.500000) \- (481645.312500, 4765610.500000)
+Layer SRS WKT:
+PROJCRS[\(dqOSGB36 / British National Grid\(dq,
+    BASEGEOGCRS[\(dqOSGB36\(dq,
+        DATUM[\(dqOrdnance Survey of Great Britain 1936\(dq,
+            ELLIPSOID[\(dqAiry 1830\(dq,6377563.396,299.3249646,
+                LENGTHUNIT[\(dqmetre\(dq,1]]],
+        PRIMEM[\(dqGreenwich\(dq,0,
+            ANGLEUNIT[\(dqdegree\(dq,0.0174532925199433]],
+        ID[\(dqEPSG\(dq,4277]],
+    CONVERSION[\(dqBritish National Grid\(dq,
+        METHOD[\(dqTransverse Mercator\(dq,
+            ID[\(dqEPSG\(dq,9807]],
+        PARAMETER[\(dqLatitude of natural origin\(dq,49,
+            ANGLEUNIT[\(dqdegree\(dq,0.0174532925199433],
+            ID[\(dqEPSG\(dq,8801]],
+        PARAMETER[\(dqLongitude of natural origin\(dq,\-2,
+            ANGLEUNIT[\(dqdegree\(dq,0.0174532925199433],
+            ID[\(dqEPSG\(dq,8802]],
+        PARAMETER[\(dqScale factor at natural origin\(dq,0.9996012717,
+            SCALEUNIT[\(dqunity\(dq,1],
+            ID[\(dqEPSG\(dq,8805]],
+        PARAMETER[\(dqFalse easting\(dq,400000,
+            LENGTHUNIT[\(dqmetre\(dq,1],
+            ID[\(dqEPSG\(dq,8806]],
+        PARAMETER[\(dqFalse northing\(dq,\-100000,
+            LENGTHUNIT[\(dqmetre\(dq,1],
+            ID[\(dqEPSG\(dq,8807]]],
+    CS[Cartesian,2],
+        AXIS[\(dq(E)\(dq,east,
+            ORDER[1],
+            LENGTHUNIT[\(dqmetre\(dq,1]],
+        AXIS[\(dq(N)\(dq,north,
+            ORDER[2],
+            LENGTHUNIT[\(dqmetre\(dq,1]],
+    USAGE[
+        SCOPE[\(dqEngineering survey, topographic mapping.\(dq],
+        AREA[\(dqUnited Kingdom (UK) \- offshore to boundary of UKCS within 49°45\(aqN to 61°N and 9°W to 2°E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.\(dq],
+        BBOX[49.75,\-9.01,61.01,2.01]],
+    ID[\(dqEPSG\(dq,27700]]
+Data axis to CRS axis mapping: 1,2
+FID Column = fid
+Geometry Column = geom
+AREA: Real (0.0)
+EAS_ID: Integer64 (0.0)
+PRFEDEA: String (16.0)
+OGRFeature(poly):1
+  AREA (Real) = 215229.266
+  EAS_ID (Integer64) = 168
+  PRFEDEA (String) = 35043411
+  POLYGON ((479819.84375 4765180.5,479690.1875 4765259.5,479647.0 4765369.5,479730.375 4765400.5,480039.03125 4765539.5,480035.34375 4765558.5,480159.78125 4765610.5,480202.28125 4765482.0,480365.0 4765015.5,480389.6875 4764950.0,480133.96875 4764856.5,480080.28125 4764979.5,480082.96875 4765049.5,480088.8125 4765139.5,480059.90625 4765239.5,480019.71875 4765319.5,479980.21875 4765409.5,479909.875 4765370.0,479859.875 4765270.0,479819.84375 4765180.5))
+
+OGRFeature(poly):2
+  AREA (Real) = 247328.172
+  EAS_ID (Integer64) = 179
+  PRFEDEA (String) = 35043423
+  POLYGON ((480035.34375 4765558.5,480039.03125 4765539.5,479730.375 4765400.5,479647.0 4765369.5,479690.1875 4765259.5,479819.84375 4765180.5,479779.84375 4765109.5,479681.78125 4764940.0,479468.0 4764942.5,479411.4375 4764940.5,479353.0 4764939.5,479208.65625 4764882.5,479196.8125 4764879.0,479123.28125 4765015.0,479046.53125 4765117.0,479029.71875 4765110.5,479014.9375 4765147.5,479149.9375 4765200.5,479639.625 4765399.5,480035.34375 4765558.5))
+
+OGRFeature(poly):3
+  AREA (Real) = 261752.781
+  EAS_ID (Integer64) = 171
+  PRFEDEA (String) = 35043414
+  POLYGON ((479819.84375 4765180.5,479859.875 4765270.0,479909.875 4765370.0,479980.21875 4765409.5,480019.71875 4765319.5,480059.90625 4765239.5,480088.8125 4765139.5,480082.96875 4765049.5,480000.28125 4765043.0,479934.96875 4765020.0,479895.125 4765000.0,479734.375 4764865.0,479680.28125 4764852.0,479644.78125 4764827.5,479637.875 4764803.0,479617.21875 4764760.0,479587.28125 4764718.0,479548.03125 4764693.5,479504.90625 4764609.5,479239.8125 4764505.0,479117.8125 4764847.0,479196.8125 4764879.0,479208.65625 4764882.5,479353.0 4764939.5,479411.4375 4764940.5,479468.0 4764942.5,479681.78125 4764940.0,479779.84375 4765109.5,479819.84375 4765180.5))
+
+OGRFeature(poly):4
+  AREA (Real) = 547597.188
+  EAS_ID (Integer64) = 173
+  PRFEDEA (String) = 35043416
+  POLYGON ((479014.9375 4765147.5,479029.71875 4765110.5,479117.8125 4764847.0,479239.8125 4764505.0,479305.875 4764361.0,479256.03125 4764314.5,479220.90625 4764212.5,479114.5 4764174.0,479018.28125 4764418.5,478896.9375 4764371.0,478748.8125 4764308.5,478503.03125 4764218.0,478461.75 4764337.5,478443.9375 4764400.5,478447.8125 4764454.0,478448.6875 4764531.5,478502.1875 4764541.5,478683.0 4764730.5,478621.03125 4764788.5,478597.34375 4764766.5,478532.5 4764695.5,478460.125 4764615.0,478408.0625 4764654.0,478315.53125 4764876.0,478889.25 4765100.0,479014.9375 4765147.5))
+
+OGRFeature(poly):5
+  AREA (Real) = 15775.758
+  EAS_ID (Integer64) = 172
+  PRFEDEA (String) = 35043415
+  POLYGON ((479029.71875 4765110.5,479046.53125 4765117.0,479123.28125 4765015.0,479196.8125 4764879.0,479117.8125 4764847.0,479029.71875 4765110.5))
+
+OGRFeature(poly):6
+  AREA (Real) = 101429.977
+  EAS_ID (Integer64) = 169
+  PRFEDEA (String) = 35043412
+  POLYGON ((480082.96875 4765049.5,480080.28125 4764979.5,480133.96875 4764856.5,479968.46875 4764788.0,479750.6875 4764702.0,479735.90625 4764752.0,479640.09375 4764721.0,479658.59375 4764670.0,479504.90625 4764609.5,479548.03125 4764693.5,479587.28125 4764718.0,479617.21875 4764760.0,479637.875 4764803.0,479644.78125 4764827.5,479680.28125 4764852.0,479734.375 4764865.0,479895.125 4765000.0,479934.96875 4765020.0,480000.28125 4765043.0,480082.96875 4765049.5))
+
+OGRFeature(poly):7
+  AREA (Real) = 268597.625
+  EAS_ID (Integer64) = 166
+  PRFEDEA (String) = 35043409
+  POLYGON ((480389.6875 4764950.0,480537.15625 4765014.0,480567.96875 4764918.0,480605 4764835,480701.0625 4764738.0,480710.25 4764690.5,480588.59375 4764740.5,480540.71875 4764741.0,480515.125 4764695.0,480731.65625 4764561.5,480692.1875 4764453.5,480677.84375 4764439.0,480655.34375 4764397.5,480584.375 4764353.0,480500.40625 4764326.5,480358.53125 4764277.0,480192.3125 4764183.0,480157.125 4764266.5,480234.3125 4764304.0,480289.125 4764348.5,480316 4764395,480343.5625 4764477.0,480343.71875 4764532.5,480258.03125 4764767.0,480177.15625 4764742.0,480093.75 4764703.0,480011.0 4764674.5,479985.0625 4764732.0,479968.46875 4764788.0,480133.96875 4764856.5,480389.6875 4764950.0))
+
+OGRFeature(poly):8
+  AREA (Real) = 1634833.375
+  EAS_ID (Integer64) = 158
+  PRFEDEA (String) = 35043369
+  POLYGON ((480701.0625 4764738.0,480761.46875 4764778.0,480824.96875 4764820.0,480922.03125 4764850.5,480930.71875 4764852.0,480984.25 4764875.0,481088.1875 4764936.0,481136.84375 4764994.5,481281.3125 4764876.5,481291.09375 4764810.0,481465.90625 4764872.5,481457.375 4764937.0,481509.65625 4764967.0,481538.90625 4764982.5,481575.0 4764999.5,481602.125 4764915.5,481629.84375 4764829.5,481645.3125 4764797.5,481635.96875 4764795.5,481235.3125 4764650.0,481209.8125 4764633.5,481199.21875 4764623.5,481185.5 4764607.0,481159.9375 4764580.0,481140.46875 4764510.5,481141.625 4764480.5,481199.84375 4764180.0,481143.4375 4764010.5,481130.3125 4763979.5,481039.9375 4763889.5,480882.6875 4763670.0,480826.0625 4763650.5,480745.1875 4763628.5,480654.4375 4763627.5,480599.8125 4763660.0,480281.9375 4763576.5,480221.5 4763533.5,480199.6875 4763509.0,480195.09375 4763430.0,480273.6875 4763305.5,480309.6875 4763063.5,480201.84375 4762962.5,479855.3125 4762880.5,479848.53125 4762897.0,479728.875 4763217.5,479492.6875 4763850.0,479550.0625 4763919.5,480120.21875 4764188.5,480192.3125 4764183.0,480358.53125 4764277.0,480500.40625 4764326.5,480584.375 4764353.0,480655.34375 4764397.5,480677.84375 4764439.0,480692.1875 4764453.5,480731.65625 4764561.5,480515.125 4764695.0,480540.71875 4764741.0,480588.59375 4764740.5,480710.25 4764690.5,480701.0625 4764738.0))
+
+OGRFeature(poly):9
+  AREA (Real) = \-596610.313
+  EAS_ID (Integer64) = 165
+  PRFEDEA (String) = 35043408
+  POLYGON ((479750.6875 4764702.0,479968.46875 4764788.0,479985.0625 4764732.0,480011.0 4764674.5,480093.75 4764703.0,480177.15625 4764742.0,480258.03125 4764767.0,480343.71875 4764532.5,480343.5625 4764477.0,480316 4764395,480289.125 4764348.5,480234.3125 4764304.0,480157.125 4764266.5,480192.3125 4764183.0,480120.21875 4764188.5,479550.0625 4763919.5,479492.6875 4763850.0,479487.75 4763864.5,479442.75 4763990.0,479436 4764023,479398.9375 4764100.0,479349.625 4764230.0,479305.875 4764361.0,479239.8125 4764505.0,479504.90625 4764609.5,479658.59375 4764670.0,479750.6875 4764702.0))
+
+OGRFeature(poly):10
+  AREA (Real) = 5268.813
+  EAS_ID (Integer64) = 170
+  PRFEDEA (String) = 35043413
+  POLYGON ((479750.6875 4764702.0,479658.59375 4764670.0,479640.09375 4764721.0,479735.90625 4764752.0,479750.6875 4764702.0))
+.EE
+.UNINDENT
+.UNINDENT
+.SS Example 3: Getting the list of all drivers (with JSON output)
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+$ gdal \-\-drivers
+.EE
+.UNINDENT
+.UNINDENT
+.SH AUTHOR
+Even Rouault <even.rouault@spatialys.com>
+.SH COPYRIGHT
+1998-2025
+.\" Generated by docutils manpage writer.
+.
