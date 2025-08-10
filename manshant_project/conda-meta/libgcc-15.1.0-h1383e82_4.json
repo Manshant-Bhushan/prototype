@@ -1,0 +1,86 @@
+{
+  "build": "h1383e82_4",
+  "build_number": 4,
+  "channel": "https://conda.anaconda.org/conda-forge/win-64",
+  "constrains": [
+    "msys2-conda-epoch <0.0a0",
+    "libgcc-ng ==15.1.0 *_4",
+    "libgomp 15.1.0 h1383e82_4"
+  ],
+  "depends": [
+    "_openmp_mutex >=4.5",
+    "libwinpthread >=12.0.0.r4.gg4f2fc60ca"
+  ],
+  "extracted_package_dir": "D:\\Anaconda\\pkgs\\libgcc-15.1.0-h1383e82_4",
+  "files": [
+    "Library/bin/libatomic-1.dll",
+    "Library/bin/libgcc_s_seh-1.dll",
+    "Library/bin/libquadmath-0.dll",
+    "Library/share/info/libgomp.info",
+    "Library/share/info/libquadmath.info",
+    "Library/share/licenses/gcc-libs/RUNTIME.LIBRARY.EXCEPTION"
+  ],
+  "fn": "libgcc-15.1.0-h1383e82_4.conda",
+  "license": "GPL-3.0-only WITH GCC-exception-3.1",
+  "link": {
+    "source": "D:\\Anaconda\\pkgs\\libgcc-15.1.0-h1383e82_4",
+    "type": 1
+  },
+  "md5": "59fe76f0ff39b512ff889459b9fc3054",
+  "name": "libgcc",
+  "package_tarball_full_path": "D:\\Anaconda\\pkgs\\libgcc-15.1.0-h1383e82_4.conda",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "Library/bin/libatomic-1.dll",
+        "path_type": "hardlink",
+        "sha256": "25ea630cfbb3f214c72f305b3d2c93e5bac8f2a82f93a6aff9de66e1676f21c5",
+        "sha256_in_prefix": "25ea630cfbb3f214c72f305b3d2c93e5bac8f2a82f93a6aff9de66e1676f21c5",
+        "size_in_bytes": 276197
+      },
+      {
+        "_path": "Library/bin/libgcc_s_seh-1.dll",
+        "path_type": "hardlink",
+        "sha256": "0e6d4cea6b7bba5292d78f3be0251b6d40f99d3cc281565f326acbd506fdd973",
+        "sha256_in_prefix": "0e6d4cea6b7bba5292d78f3be0251b6d40f99d3cc281565f326acbd506fdd973",
+        "size_in_bytes": 820266
+      },
+      {
+        "_path": "Library/bin/libquadmath-0.dll",
+        "path_type": "hardlink",
+        "sha256": "727d606226d2e7dc435ff663ef1d0ccb26426baccd408265b6c3a76de7d96860",
+        "sha256_in_prefix": "727d606226d2e7dc435ff663ef1d0ccb26426baccd408265b6c3a76de7d96860",
+        "size_in_bytes": 1048135
+      },
+      {
+        "_path": "Library/share/info/libgomp.info",
+        "path_type": "hardlink",
+        "sha256": "d2140e0a89d6a666bd6b4e05c65c3883e4ba17dc45e5749f4d03f30cdd09dc5d",
+        "sha256_in_prefix": "d2140e0a89d6a666bd6b4e05c65c3883e4ba17dc45e5749f4d03f30cdd09dc5d",
+        "size_in_bytes": 357380
+      },
+      {
+        "_path": "Library/share/info/libquadmath.info",
+        "path_type": "hardlink",
+        "sha256": "ddc394f4a32ffa6c408402292097f38f963c01a09c4adabc3bad4a3e5c2ffbe8",
+        "sha256_in_prefix": "ddc394f4a32ffa6c408402292097f38f963c01a09c4adabc3bad4a3e5c2ffbe8",
+        "size_in_bytes": 36642
+      },
+      {
+        "_path": "Library/share/licenses/gcc-libs/RUNTIME.LIBRARY.EXCEPTION",
+        "path_type": "hardlink",
+        "sha256": "9d6b43ce4d8de0c878bf16b54d8e7a10d9bd42b75178153e3af6a815bdc90f74",
+        "sha256_in_prefix": "9d6b43ce4d8de0c878bf16b54d8e7a10d9bd42b75178153e3af6a815bdc90f74",
+        "size_in_bytes": 3324
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "c169606e148f8df3375fdc9fe76ee3f44b8ffc2515e8131ede8f2d75cf7d6f0c",
+  "size": 668220,
+  "subdir": "win-64",
+  "timestamp": 1753904114000,
+  "url": "https://conda.anaconda.org/conda-forge/win-64/libgcc-15.1.0-h1383e82_4.conda",
+  "version": "15.1.0"
+}

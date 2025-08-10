@@ -1,0 +1,544 @@
+.\" Man page generated from reStructuredText.
+.
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.TH "GDAL-RASTER-PIPELINE" "1" "Jul 12, 2025" "" "GDAL"
+.SH NAME
+gdal-raster-pipeline \- Process a raster dataset
+.sp
+Added in version 3.11.
+
+.SH SYNOPSIS
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+Usage: gdal raster pipeline [OPTIONS] <PIPELINE>
+
+Process a raster dataset.
+
+Positional arguments:
+
+Common Options:
+  \-h, \-\-help              Display help message and exit
+  \-\-json\-usage            Display usage as JSON document and exit
+  \-\-config <KEY>=<VALUE>  Configuration option [may be repeated]
+  \-\-progress              Display progress bar
+
+<PIPELINE> is of the form: read [READ\-OPTIONS] ( ! <STEP\-NAME> [STEP\-OPTIONS] )* ! write [WRITE\-OPTIONS]
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+A pipeline chains several steps, separated with the \fI!\fP (exclamation mark) character.
+The first step must be \fBread\fP, and the last one \fBwrite\fP\&. Each step has its
+own positional or non\-positional arguments. Apart from \fBread\fP and \fBwrite\fP,
+all other steps can potentially be used several times in a pipeline.
+.sp
+Potential steps are:
+.INDENT 0.0
+.IP \(bu 2
+read
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* read [OPTIONS] <INPUT>
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Read a raster dataset.
+
+Positional arguments:
+  \-i, \-\-input <INPUT>                  Input raster dataset [required]
+
+Advanced Options:
+  \-\-if, \-\-input\-format <INPUT\-FORMAT>  Input formats [may be repeated]
+  \-\-oo, \-\-open\-option <KEY>=<VALUE>    Open options [may be repeated]
+.EE
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.IP \(bu 2
+aspect
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* aspect [OPTIONS]
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Generate an aspect map
+
+Options:
+  \-b, \-\-band <BAND>              Input band (1\-based index) (default: 1)
+  \-\-convention <CONVENTION>      Convention for output angles. CONVENTION=azimuth|trigonometric\-angle (default: azimuth)
+  \-\-gradient\-alg <GRADIENT\-ALG>  Algorithm used to compute terrain gradient. GRADIENT\-ALG=Horn|ZevenbergenThorne (default: Horn)
+  \-\-zero\-for\-flat                Whether to output zero for flat areas
+  \-\-no\-edges                     Do not try to interpolate values at dataset edges or close to nodata values
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Details for options can be found in \fI\%gdal raster aspect\fP\&.
+.INDENT 0.0
+.IP \(bu 2
+clip
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* clip [OPTIONS]
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Clip a raster dataset.
+
+Options:
+  \-\-bbox <BBOX>                    Clipping bounding box as xmin,ymin,xmax,ymax
+                                   Mutually exclusive with \-\-geometry, \-\-like
+  \-\-bbox\-crs <BBOX\-CRS>            CRS of clipping bounding box
+  \-\-geometry <GEOMETRY>            Clipping geometry (WKT or GeoJSON)
+                                   Mutually exclusive with \-\-bbox, \-\-like
+  \-\-geometry\-crs <GEOMETRY\-CRS>    CRS of clipping geometry
+  \-\-like <DATASET>                 Dataset to use as a template for bounds
+                                   Mutually exclusive with \-\-bbox, \-\-geometry
+  \-\-like\-sql <SELECT\-STATEMENT>    SELECT statement to run on the \(aqlike\(aq dataset
+                                   Mutually exclusive with \-\-like\-where
+  \-\-like\-layer <LAYER\-NAME>        Name of the layer of the \(aqlike\(aq dataset
+  \-\-like\-where <WHERE\-EXPRESSION>  WHERE SQL clause to run on the \(aqlike\(aq dataset
+                                   Mutually exclusive with \-\-like\-sql
+  \-\-only\-bbox                      For \(aqgeometry\(aq and \(aqlike\(aq, only consider their bounding box
+  \-\-allow\-bbox\-outside\-source      Allow clipping box to include pixels outside input dataset
+  \-\-add\-alpha                      Adds an alpha mask band to the destination when the source raster have none.
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Details for options can be found in \fI\%gdal raster clip\fP\&.
+.INDENT 0.0
+.IP \(bu 2
+color\-map
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* color\-map [OPTIONS]
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Generate a RGB or RGBA dataset from a single band, using a color map
+
+Options:
+  \-b, \-\-band <BAND>                    Input band (1\-based index) (default: 1)
+  \-\-color\-map <COLOR\-MAP>              Color map filename
+  \-\-add\-alpha                          Adds an alpha mask band to the destination.
+  \-\-color\-selection <COLOR\-SELECTION>  How to compute output colors from input values. COLOR\-SELECTION=interpolate|exact|nearest (default: interpolate)
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Details for options can be found in \fI\%gdal raster color\-map\fP\&.
+.INDENT 0.0
+.IP \(bu 2
+edit
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* edit [OPTIONS]
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Edit a raster dataset.
+
+Options:
+  \-\-crs <CRS>               Override CRS (without reprojection)
+  \-\-bbox <BBOX>             Bounding box as xmin,ymin,xmax,ymax
+  \-\-nodata <NODATA>         Assign a specified nodata value to output bands (\(aqnone\(aq, numeric value, \(aqnan\(aq, \(aqinf\(aq, \(aq\-inf\(aq)
+  \-\-metadata <KEY>=<VALUE>  Add/update dataset metadata item [may be repeated]
+  \-\-unset\-metadata <KEY>    Remove dataset metadata item [may be repeated]
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Details for options can be found in \fI\%gdal raster edit\fP\&.
+.INDENT 0.0
+.IP \(bu 2
+hillshade
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* hillshade [OPTIONS]
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Generate a shaded relief map
+
+Options:
+  \-b, \-\-band <BAND>              Input band (1\-based index) (default: 1)
+  \-z, \-\-zfactor <ZFACTOR>        Vertical exaggeration used to pre\-multiply the elevations
+  \-\-xscale <XSCALE>              Ratio of vertical units to horizontal X axis units
+  \-\-yscale <YSCALE>              Ratio of vertical units to horizontal Y axis units
+  \-\-azimuth <AZIMUTH>            Azimuth of the light, in degrees (default: 315)
+  \-\-altitude <ALTITUDE>          Altitude of the light, in degrees (default: 45)
+  \-\-gradient\-alg <GRADIENT\-ALG>  Algorithm used to compute terrain gradient. GRADIENT\-ALG=Horn|ZevenbergenThorne (default: Horn)
+  \-\-variant <VARIANT>            Variant of the hillshading algorithm. VARIANT=regular|combined|multidirectional|Igor (default: regular)
+  \-\-no\-edges                     Do not try to interpolate values at dataset edges or close to nodata values
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Details for options can be found in \fI\%gdal raster hillshade\fP\&.
+.INDENT 0.0
+.IP \(bu 2
+reproject
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* reproject [OPTIONS]
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Reproject a raster dataset.
+
+Options:
+  \-s, \-\-src\-crs <SRC\-CRS>                    Source CRS
+  \-d, \-\-dst\-crs <DST\-CRS>                    Destination CRS
+  \-r, \-\-resampling <RESAMPLING>              Resampling method. RESAMPLING=nearest|bilinear|cubic|cubicspline|lanczos|average|rms|mode|min|max|med|q1|q3|sum (default: nearest)
+  \-\-resolution <xres>,<yres>                 Target resolution (in destination CRS units)
+                                             Mutually exclusive with \-\-size
+  \-\-size <width>,<height>                    Target size in pixels
+                                             Mutually exclusive with \-\-resolution
+  \-\-bbox <BBOX>                              Target bounding box (in destination CRS units)
+  \-\-bbox\-crs <BBOX\-CRS>                      CRS of target bounding box
+
+Advanced Options:
+  \-\-target\-aligned\-pixels                    Round target extent to target resolution
+  \-\-src\-nodata <SRC\-NODATA>                  Set nodata values for input bands (\(aqNone\(aq to unset). [1.. values]
+  \-\-dst\-nodata <DST\-NODATA>                  Set nodata values for output bands (\(aqNone\(aq to unset). [1.. values]
+  \-\-add\-alpha                                Adds an alpha mask band to the destination when the source raster have none.
+  \-\-wo, \-\-warp\-option <NAME>=<VALUE>         Warping option(s) [may be repeated]
+  \-\-to, \-\-transform\-option <NAME>=<VALUE>    Transform option(s) [may be repeated]
+  \-\-et, \-\-error\-threshold <ERROR\-THRESHOLD>  Error threshold
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Details for options can be found in \fI\%gdal raster reproject\fP\&.
+.INDENT 0.0
+.IP \(bu 2
+resize
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* resize [OPTIONS]
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Resize a raster dataset without changing the georeferenced extents.
+
+Options:
+  \-\-size <width[%]>,<height[%]>  Target size in pixels (or percentage if using \(aq%\(aq suffix) [required]
+  \-r, \-\-resampling <RESAMPLING>  Resampling method. RESAMPLING=nearest|bilinear|cubic|cubicspline|lanczos|average|mode (default: nearest)
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Details for options can be found in \fI\%gdal raster resize\fP\&.
+.INDENT 0.0
+.IP \(bu 2
+roughness
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* roughness [OPTIONS]
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Generate a roughness map
+
+Options:
+  \-b, \-\-band <BAND>       Input band (1\-based index) (default: 1)
+  \-\-no\-edges              Do not try to interpolate values at dataset edges or close to nodata values
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Details for options can be found in \fI\%gdal raster roughness\fP\&.
+.INDENT 0.0
+.IP \(bu 2
+scale
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* scale [OPTIONS]
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Scale the values of the bands of a raster dataset.
+
+Options:
+  \-\-ot, \-\-datatype, \-\-output\-data\-type <OUTPUT\-DATA\-TYPE>  Output data type. OUTPUT\-DATA\-TYPE=Byte|Int8|UInt16|Int16|UInt32|Int32|UInt64|Int64|CInt16|CInt32|Float16|Float32|Float64|CFloat32|CFloat64
+  \-b, \-\-band <BAND>                                        Select band to restrict the scaling (1\-based index)
+  \-\-src\-min <SRC\-MIN>                                      Minimum value of the source range
+  \-\-src\-max <SRC\-MAX>                                      Maximum value of the source range
+  \-\-dst\-min <DST\-MIN>                                      Minimum value of the destination range
+  \-\-dst\-max <DST\-MAX>                                      Maximum value of the destination range
+  \-\-exponent <EXPONENT>                                    Exponent to apply non\-linear scaling with a power function
+  \-\-no\-clip                                                Do not clip input values to [srcmin, srcmax]
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Details for options can be found in \fI\%gdal raster scale\fP\&.
+.INDENT 0.0
+.IP \(bu 2
+select
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* select [OPTIONS] <BAND>
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Select a subset of bands from a raster dataset.
+
+Positional arguments:
+  \-b, \-\-band <BAND>       Band(s) (1\-based index, \(aqmask\(aq or \(aqmask:<band>\(aq) [1.. values] [required]
+
+Options:
+  \-\-mask <MASK>           Mask band (1\-based index, \(aqmask\(aq, \(aqmask:<band>\(aq or \(aqnone\(aq)
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Details for options can be found in \fI\%gdal raster select\fP\&.
+.INDENT 0.0
+.IP \(bu 2
+set\-type
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* set\-type [OPTIONS]
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Modify the data type of bands of a raster dataset.
+
+Options:
+  \-\-ot, \-\-datatype, \-\-output\-data\-type <OUTPUT\-DATA\-TYPE>  Output data type. OUTPUT\-DATA\-TYPE=Byte|Int8|UInt16|Int16|UInt32|Int32|UInt64|Int64|CInt16|CInt32|Float16|Float32|Float64|CFloat32|CFloat64 [required]
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Details for options can be found in \fI\%gdal raster set\-type\fP\&.
+.INDENT 0.0
+.IP \(bu 2
+slope
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* slope [OPTIONS]
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Generate a slope map
+
+Options:
+  \-b, \-\-band <BAND>              Input band (1\-based index) (default: 1)
+  \-\-unit <UNIT>                  Unit in which to express slopes. UNIT=degree|percent (default: degree)
+  \-\-xscale <XSCALE>              Ratio of vertical units to horizontal X axis units
+  \-\-yscale <YSCALE>              Ratio of vertical units to horizontal Y axis units
+  \-\-gradient\-alg <GRADIENT\-ALG>  Algorithm used to compute terrain gradient. GRADIENT\-ALG=Horn|ZevenbergenThorne (default: Horn)
+  \-\-no\-edges                     Do not try to interpolate values at dataset edges or close to nodata values
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Details for options can be found in \fI\%gdal raster slope\fP\&.
+.INDENT 0.0
+.IP \(bu 2
+tpi
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* tpi [OPTIONS]
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Generate a Topographic Position Index (TPI) map
+
+Options:
+  \-b, \-\-band <BAND>       Input band (1\-based index) (default: 1)
+  \-\-no\-edges              Do not try to interpolate values at dataset edges or close to nodata values
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Details for options can be found in \fI\%gdal raster tpi\fP\&.
+.INDENT 0.0
+.IP \(bu 2
+tri
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* tri [OPTIONS]
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Generate a Terrain Ruggedness Index (TRI) map
+
+Options:
+  \-b, \-\-band <BAND>        Input band (1\-based index) (default: 1)
+  \-\-algorithm <ALGORITHM>  Algorithm to compute TRI. ALGORITHM=Riley|Wilson (default: Riley)
+  \-\-no\-edges               Do not try to interpolate values at dataset edges or close to nodata values
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Details for options can be found in \fI\%gdal raster tri\fP\&.
+.INDENT 0.0
+.IP \(bu 2
+unscale
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* unscale [OPTIONS]
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Convert scaled values of a raster dataset into unscaled values.
+
+Options:
+  \-\-ot, \-\-datatype, \-\-output\-data\-type <OUTPUT\-DATA\-TYPE>  Output data type. OUTPUT\-DATA\-TYPE=Byte|Int8|UInt16|Int16|UInt32|Int32|UInt64|Int64|CInt16|CInt32|Float16|Float32|Float64|CFloat32|CFloat64
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+Details for options can be found in \fI\%gdal raster unscale\fP\&.
+.INDENT 0.0
+.IP \(bu 2
+write
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+* write [OPTIONS] <OUTPUT>
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+Write a raster dataset.
+
+Positional arguments:
+  \-o, \-\-output <OUTPUT>                                Output raster dataset [required]
+
+Options:
+  \-f, \-\-of, \-\-format, \-\-output\-format <OUTPUT\-FORMAT>  Output format (\(dqGDALG\(dq allowed)
+  \-\-co, \-\-creation\-option <KEY>=<VALUE>                Creation option [may be repeated]
+  \-\-overwrite                                          Whether overwriting existing output is allowed
+.EE
+.UNINDENT
+.UNINDENT
+.SH DESCRIPTION
+.sp
+\fBgdal raster pipeline\fP can be used to process a raster dataset and
+perform various processing steps.
+.SH GDALG OUTPUT (ON-THE-FLY / STREAMED DATASET)
+.sp
+A pipeline can be serialized as a JSON file using the \fBGDALG\fP output format.
+The resulting file can then be opened as a raster dataset using the
+\fI\%GDALG: GDAL Streamed Algorithm\fP driver, and apply the specified pipeline in a on\-the\-fly /
+streamed way.
+.sp
+The \fBcommand_line\fP member of the JSON file should nominally be the whole command
+line without the final \fBwrite\fP step, and is what is generated by
+\fBgdal raster pipeline ! .... ! write out.gdalg.json\fP\&.
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+{
+    \(dqtype\(dq: \(dqgdal_streamed_alg\(dq,
+    \(dqcommand_line\(dq: \(dqgdal raster pipeline ! read in.tif ! reproject \-\-dst\-crs=EPSG:32632\(dq
+}
+.EE
+.UNINDENT
+.UNINDENT
+.sp
+The final \fBwrite\fP step can be added but if so it must explicitly specify the
+\fBstream\fP output format and a non\-significant output dataset name.
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+{
+    \(dqtype\(dq: \(dqgdal_streamed_alg\(dq,
+    \(dqcommand_line\(dq: \(dqgdal raster pipeline ! read in.tif ! reproject \-\-dst\-crs=EPSG:32632 ! write \-\-output\-format=streamed streamed_dataset\(dq
+}
+.EE
+.UNINDENT
+.UNINDENT
+.SH EXAMPLES
+.SS Example 1: Reproject a GeoTIFF file to CRS EPSG:32632 (\(dqWGS 84 / UTM zone 32N\(dq) and adding a metadata item
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+$ gdal raster pipeline \-\-progress ! read in.tif ! reproject \-\-dst\-crs=EPSG:32632 ! edit \-\-metadata AUTHOR=EvenR ! write out.tif \-\-overwrite
+.EE
+.UNINDENT
+.UNINDENT
+.SS Example 2: Serialize the command of a reprojection of a GeoTIFF file in a GDALG file, and later read it
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.EX
+$ gdal raster pipeline \-\-progress ! read in.tif ! reproject \-\-dst\-crs=EPSG:32632 ! write in_epsg_32632.gdalg.json \-\-overwrite
+$ gdal raster info in_epsg_32632.gdalg.json
+.EE
+.UNINDENT
+.UNINDENT
+.SH AUTHOR
+Even Rouault <even.rouault@spatialys.com>
+.SH COPYRIGHT
+1998-2025
+.\" Generated by docutils manpage writer.
+.

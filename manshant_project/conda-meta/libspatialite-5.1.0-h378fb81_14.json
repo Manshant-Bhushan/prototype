@@ -1,0 +1,309 @@
+{
+  "build": "h378fb81_14",
+  "build_number": 14,
+  "channel": "https://conda.anaconda.org/conda-forge/win-64",
+  "constrains": [],
+  "depends": [
+    "freexl >=2",
+    "freexl >=2.0.0,<3.0a0",
+    "geos >=3.13.1,<3.13.2.0a0",
+    "librttopo >=1.1.0,<1.2.0a0",
+    "libsqlite >=3.49.1,<4.0a0",
+    "libxml2 >=2.13.6,<2.14.0a0",
+    "libzlib >=1.3.1,<2.0a0",
+    "proj >=9.6.0,<9.7.0a0",
+    "sqlite",
+    "ucrt >=10.0.20348.0",
+    "vc >=14.2,<15",
+    "vc14_runtime >=14.29.30139",
+    "zlib"
+  ],
+  "extracted_package_dir": "D:\\Anaconda\\pkgs\\libspatialite-5.1.0-h378fb81_14",
+  "files": [
+    "Library/bin/mod_spatialite.dll",
+    "Library/bin/spatialite.dll",
+    "Library/include/spatialite.h",
+    "Library/include/spatialite/control_points.h",
+    "Library/include/spatialite/debug.h",
+    "Library/include/spatialite/gaia_network.h",
+    "Library/include/spatialite/gaia_topology.h",
+    "Library/include/spatialite/gaiaaux.h",
+    "Library/include/spatialite/gaiaconfig-msvc.h",
+    "Library/include/spatialite/gaiaconfig.h",
+    "Library/include/spatialite/gaiaexif.h",
+    "Library/include/spatialite/gaiageo.h",
+    "Library/include/spatialite/gaiamatrix.h",
+    "Library/include/spatialite/geojson.h",
+    "Library/include/spatialite/geopackage.h",
+    "Library/include/spatialite/gg_advanced.h",
+    "Library/include/spatialite/gg_const.h",
+    "Library/include/spatialite/gg_core.h",
+    "Library/include/spatialite/gg_dxf.h",
+    "Library/include/spatialite/gg_dynamic.h",
+    "Library/include/spatialite/gg_formats.h",
+    "Library/include/spatialite/gg_mbr.h",
+    "Library/include/spatialite/gg_sequence.h",
+    "Library/include/spatialite/gg_structs.h",
+    "Library/include/spatialite/gg_wfs.h",
+    "Library/include/spatialite/gg_xml.h",
+    "Library/include/spatialite/spatialite_ext.h",
+    "Library/include/spatialite/sqlite.h",
+    "Library/include/spatialite/stored_procedures.h",
+    "Library/lib/mod_spatialite.lib",
+    "Library/lib/mod_spatialite_i.lib",
+    "Library/lib/spatialite.lib",
+    "Library/lib/spatialite_i.lib"
+  ],
+  "fn": "libspatialite-5.1.0-h378fb81_14.conda",
+  "license": "MPL-1.1",
+  "link": {
+    "source": "D:\\Anaconda\\pkgs\\libspatialite-5.1.0-h378fb81_14",
+    "type": 1
+  },
+  "md5": "58904bcd0b61948946e4efff5e4e3bbd",
+  "name": "libspatialite",
+  "package_tarball_full_path": "D:\\Anaconda\\pkgs\\libspatialite-5.1.0-h378fb81_14.conda",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "Library/bin/mod_spatialite.dll",
+        "path_type": "hardlink",
+        "sha256": "d02380a413d8a560b4f2744ccaed0021d41cbd124afc0134da8e22e617cddfb2",
+        "sha256_in_prefix": "d02380a413d8a560b4f2744ccaed0021d41cbd124afc0134da8e22e617cddfb2",
+        "size_in_bytes": 13769216
+      },
+      {
+        "_path": "Library/bin/spatialite.dll",
+        "path_type": "hardlink",
+        "sha256": "017e7c62afc6c76b4d7fcb027187c2f4e45f20f92b7c2416f1822a0366bd7093",
+        "sha256_in_prefix": "017e7c62afc6c76b4d7fcb027187c2f4e45f20f92b7c2416f1822a0366bd7093",
+        "size_in_bytes": 13566976
+      },
+      {
+        "_path": "Library/include/spatialite.h",
+        "path_type": "hardlink",
+        "sha256": "12690ad5dc861833edd67c4f4c91852573fc841f7d20b59d53d082c9f07cb53b",
+        "sha256_in_prefix": "12690ad5dc861833edd67c4f4c91852573fc841f7d20b59d53d082c9f07cb53b",
+        "size_in_bytes": 81508
+      },
+      {
+        "_path": "Library/include/spatialite/control_points.h",
+        "path_type": "hardlink",
+        "sha256": "f21e0764651c798106073f00a1bf1808c7f328429c812703ac1c37a716438e86",
+        "sha256_in_prefix": "f21e0764651c798106073f00a1bf1808c7f328429c812703ac1c37a716438e86",
+        "size_in_bytes": 8225
+      },
+      {
+        "_path": "Library/include/spatialite/debug.h",
+        "path_type": "hardlink",
+        "sha256": "270fcbb5638f5468d8279ef8014babaa64318d11a3186960977769a2b50b4160",
+        "sha256_in_prefix": "270fcbb5638f5468d8279ef8014babaa64318d11a3186960977769a2b50b4160",
+        "size_in_bytes": 2604
+      },
+      {
+        "_path": "Library/include/spatialite/gaia_network.h",
+        "path_type": "hardlink",
+        "sha256": "93edcd531be48995bef87830b798203457995a95e9bdc588a1103d9e871add03",
+        "sha256_in_prefix": "93edcd531be48995bef87830b798203457995a95e9bdc588a1103d9e871add03",
+        "size_in_bytes": 20617
+      },
+      {
+        "_path": "Library/include/spatialite/gaia_topology.h",
+        "path_type": "hardlink",
+        "sha256": "adae36e58d1883c68f7d4ac28cff66fabc35addc2a2e10ae1046cd8cd6352c17",
+        "sha256_in_prefix": "adae36e58d1883c68f7d4ac28cff66fabc35addc2a2e10ae1046cd8cd6352c17",
+        "size_in_bytes": 41048
+      },
+      {
+        "_path": "Library/include/spatialite/gaiaaux.h",
+        "path_type": "hardlink",
+        "sha256": "ce3c62796045448e9080c57c98e8413de0f763516c315fde61adc86694de2df3",
+        "sha256_in_prefix": "ce3c62796045448e9080c57c98e8413de0f763516c315fde61adc86694de2df3",
+        "size_in_bytes": 16604
+      },
+      {
+        "_path": "Library/include/spatialite/gaiaconfig-msvc.h",
+        "path_type": "hardlink",
+        "sha256": "0903b26fd6588f389996d5083e00eeded25a988a3f1673b1e82d8863f463c3b6",
+        "sha256_in_prefix": "0903b26fd6588f389996d5083e00eeded25a988a3f1673b1e82d8863f463c3b6",
+        "size_in_bytes": 1778
+      },
+      {
+        "_path": "Library/include/spatialite/gaiaconfig.h",
+        "path_type": "hardlink",
+        "sha256": "d8c0c001412870bbbd1a79b2fa3cd9e488883f3a661ff55d03d94418a2fa86d0",
+        "sha256_in_prefix": "d8c0c001412870bbbd1a79b2fa3cd9e488883f3a661ff55d03d94418a2fa86d0",
+        "size_in_bytes": 2107
+      },
+      {
+        "_path": "Library/include/spatialite/gaiaexif.h",
+        "path_type": "hardlink",
+        "sha256": "c92be3ecc0cd3b4b5c179091a89564167bf5e978a08dfd1fc47d9ad5750336c8",
+        "sha256_in_prefix": "c92be3ecc0cd3b4b5c179091a89564167bf5e978a08dfd1fc47d9ad5750336c8",
+        "size_in_bytes": 19896
+      },
+      {
+        "_path": "Library/include/spatialite/gaiageo.h",
+        "path_type": "hardlink",
+        "sha256": "3ed85d89b5f1aad46e87c7ee5363967bd20b5070c702500761e94f8ac08eff11",
+        "sha256_in_prefix": "3ed85d89b5f1aad46e87c7ee5363967bd20b5070c702500761e94f8ac08eff11",
+        "size_in_bytes": 2354
+      },
+      {
+        "_path": "Library/include/spatialite/gaiamatrix.h",
+        "path_type": "hardlink",
+        "sha256": "d88193dd9a0a29341887619b0455aaf0dbd50cb4bf3603b710c39859684666b4",
+        "sha256_in_prefix": "d88193dd9a0a29341887619b0455aaf0dbd50cb4bf3603b710c39859684666b4",
+        "size_in_bytes": 9615
+      },
+      {
+        "_path": "Library/include/spatialite/geojson.h",
+        "path_type": "hardlink",
+        "sha256": "b7eff3e80e3f4ae3eab7087d585a9f13cfbb28f0a80011407226a98624bdf17a",
+        "sha256_in_prefix": "b7eff3e80e3f4ae3eab7087d585a9f13cfbb28f0a80011407226a98624bdf17a",
+        "size_in_bytes": 15615
+      },
+      {
+        "_path": "Library/include/spatialite/geopackage.h",
+        "path_type": "hardlink",
+        "sha256": "31b6d52d19d3a10162bd01b9d824596d0c1f49ec6def6992b64c2363264eb4e7",
+        "sha256_in_prefix": "31b6d52d19d3a10162bd01b9d824596d0c1f49ec6def6992b64c2363264eb4e7",
+        "size_in_bytes": 6855
+      },
+      {
+        "_path": "Library/include/spatialite/gg_advanced.h",
+        "path_type": "hardlink",
+        "sha256": "02e95b438b8151376f6954b54ccf585ba2ec701355d821eee6e7804240a81d06",
+        "sha256_in_prefix": "02e95b438b8151376f6954b54ccf585ba2ec701355d821eee6e7804240a81d06",
+        "size_in_bytes": 170111
+      },
+      {
+        "_path": "Library/include/spatialite/gg_const.h",
+        "path_type": "hardlink",
+        "sha256": "2cb4dd9c85df019f76a6c5db13930c3734cd240d073876513317aa7fe8f91143",
+        "sha256_in_prefix": "2cb4dd9c85df019f76a6c5db13930c3734cd240d073876513317aa7fe8f91143",
+        "size_in_bytes": 18870
+      },
+      {
+        "_path": "Library/include/spatialite/gg_core.h",
+        "path_type": "hardlink",
+        "sha256": "e166ea2b886e98a3ac5d4bce8da2e2009f00ca6ff18b7aa5a1fdf749c795a8ad",
+        "sha256_in_prefix": "e166ea2b886e98a3ac5d4bce8da2e2009f00ca6ff18b7aa5a1fdf749c795a8ad",
+        "size_in_bytes": 78912
+      },
+      {
+        "_path": "Library/include/spatialite/gg_dxf.h",
+        "path_type": "hardlink",
+        "sha256": "8e4822bf3551b83ef574b315db3f8a32de8cd748e20390d7d647078c1a68d38c",
+        "sha256_in_prefix": "8e4822bf3551b83ef574b315db3f8a32de8cd748e20390d7d647078c1a68d38c",
+        "size_in_bytes": 28958
+      },
+      {
+        "_path": "Library/include/spatialite/gg_dynamic.h",
+        "path_type": "hardlink",
+        "sha256": "fd9c8d32d549020145befd70a1d3e0791d9a0cc18cfa5a856527f9ad79d60adc",
+        "sha256_in_prefix": "fd9c8d32d549020145befd70a1d3e0791d9a0cc18cfa5a856527f9ad79d60adc",
+        "size_in_bytes": 13056
+      },
+      {
+        "_path": "Library/include/spatialite/gg_formats.h",
+        "path_type": "hardlink",
+        "sha256": "529c09cfe55caec1865592f68712019815e641cdda29b89840a42c7884a7b391",
+        "sha256_in_prefix": "529c09cfe55caec1865592f68712019815e641cdda29b89840a42c7884a7b391",
+        "size_in_bytes": 71051
+      },
+      {
+        "_path": "Library/include/spatialite/gg_mbr.h",
+        "path_type": "hardlink",
+        "sha256": "1d723111d8c16776d5efc467eca86602d6e824a1678d08b64b7908dcae5cc381",
+        "sha256_in_prefix": "1d723111d8c16776d5efc467eca86602d6e824a1678d08b64b7908dcae5cc381",
+        "size_in_bytes": 18884
+      },
+      {
+        "_path": "Library/include/spatialite/gg_sequence.h",
+        "path_type": "hardlink",
+        "sha256": "8f3c9eb95c68f6629c82db14d7a0bfc49a1b80d6e339cf353053447f527297ec",
+        "sha256_in_prefix": "8f3c9eb95c68f6629c82db14d7a0bfc49a1b80d6e339cf353053447f527297ec",
+        "size_in_bytes": 5253
+      },
+      {
+        "_path": "Library/include/spatialite/gg_structs.h",
+        "path_type": "hardlink",
+        "sha256": "79307fa980b6d97422164dbbfecfcca2512ff2c8626688b4f7e3847d42a55ed1",
+        "sha256_in_prefix": "79307fa980b6d97422164dbbfecfcca2512ff2c8626688b4f7e3847d42a55ed1",
+        "size_in_bytes": 24752
+      },
+      {
+        "_path": "Library/include/spatialite/gg_wfs.h",
+        "path_type": "hardlink",
+        "sha256": "59cbcbf48f7aaaffc867b48d13f231edb0afde0c8f00c75ea13ecc8f9b63554c",
+        "sha256_in_prefix": "59cbcbf48f7aaaffc867b48d13f231edb0afde0c8f00c75ea13ecc8f9b63554c",
+        "size_in_bytes": 21593
+      },
+      {
+        "_path": "Library/include/spatialite/gg_xml.h",
+        "path_type": "hardlink",
+        "sha256": "1298925ad7f9cd5d4e4a733fd612c25fb1ccdca9c71c2da1a2d20e6c49da90fa",
+        "sha256_in_prefix": "1298925ad7f9cd5d4e4a733fd612c25fb1ccdca9c71c2da1a2d20e6c49da90fa",
+        "size_in_bytes": 29331
+      },
+      {
+        "_path": "Library/include/spatialite/spatialite_ext.h",
+        "path_type": "hardlink",
+        "sha256": "f1570ff3d88b7e9383cc1e144526eea7d7f9e23803276a42eb37ad86baf94023",
+        "sha256_in_prefix": "f1570ff3d88b7e9383cc1e144526eea7d7f9e23803276a42eb37ad86baf94023",
+        "size_in_bytes": 2869
+      },
+      {
+        "_path": "Library/include/spatialite/sqlite.h",
+        "path_type": "hardlink",
+        "sha256": "a9647d62094a90bb8a6f20adcdec3e4d3fd52348172345c7237af2ce96c4ad96",
+        "sha256_in_prefix": "a9647d62094a90bb8a6f20adcdec3e4d3fd52348172345c7237af2ce96c4ad96",
+        "size_in_bytes": 2488
+      },
+      {
+        "_path": "Library/include/spatialite/stored_procedures.h",
+        "path_type": "hardlink",
+        "sha256": "b4b7f1b5d1bc6a9854763e3bff2b61604bdcbba7ab1ae11791e83efb0b297863",
+        "sha256_in_prefix": "b4b7f1b5d1bc6a9854763e3bff2b61604bdcbba7ab1ae11791e83efb0b297863",
+        "size_in_bytes": 21889
+      },
+      {
+        "_path": "Library/lib/mod_spatialite.lib",
+        "path_type": "hardlink",
+        "sha256": "73eb3fd89b64c97a79edf32a78fa4e4d89033ebc7d1a91a0d65bc68be6d9396e",
+        "sha256_in_prefix": "73eb3fd89b64c97a79edf32a78fa4e4d89033ebc7d1a91a0d65bc68be6d9396e",
+        "size_in_bytes": 22460212
+      },
+      {
+        "_path": "Library/lib/mod_spatialite_i.lib",
+        "path_type": "hardlink",
+        "sha256": "e134367d5c62e1f3dc7c57592c3f645749804a113281e9930df21536001cb02d",
+        "sha256_in_prefix": "e134367d5c62e1f3dc7c57592c3f645749804a113281e9930df21536001cb02d",
+        "size_in_bytes": 213808
+      },
+      {
+        "_path": "Library/lib/spatialite.lib",
+        "path_type": "hardlink",
+        "sha256": "084a579929c6a9bcebe6204ebed3c8876de5579058bcfc7f3f7f114b0cf93b2e",
+        "sha256_in_prefix": "084a579929c6a9bcebe6204ebed3c8876de5579058bcfc7f3f7f114b0cf93b2e",
+        "size_in_bytes": 22248500
+      },
+      {
+        "_path": "Library/lib/spatialite_i.lib",
+        "path_type": "hardlink",
+        "sha256": "422225bd027287dab669887c9125e7e5b4083e7d3d5787e73ba837980d94e6d5",
+        "sha256_in_prefix": "422225bd027287dab669887c9125e7e5b4083e7d3d5787e73ba837980d94e6d5",
+        "size_in_bytes": 210636
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "2a32368acce3c70a26e5600be369d78223e75db21907adf0454cfa30b63029e3",
+  "size": 8277831,
+  "subdir": "win-64",
+  "timestamp": 1742308854000,
+  "url": "https://conda.anaconda.org/conda-forge/win-64/libspatialite-5.1.0-h378fb81_14.conda",
+  "version": "5.1.0"
+}

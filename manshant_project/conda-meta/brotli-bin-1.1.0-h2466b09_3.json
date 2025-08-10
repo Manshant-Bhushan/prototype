@@ -1,0 +1,45 @@
+{
+  "build": "h2466b09_3",
+  "build_number": 3,
+  "channel": "https://conda.anaconda.org/conda-forge/win-64",
+  "constrains": [],
+  "depends": [
+    "libbrotlidec 1.1.0 h2466b09_3",
+    "libbrotlienc 1.1.0 h2466b09_3",
+    "ucrt >=10.0.20348.0",
+    "vc >=14.2,<15",
+    "vc14_runtime >=14.29.30139"
+  ],
+  "extracted_package_dir": "C:\\Users\\Asus\\.conda\\pkgs\\brotli-bin-1.1.0-h2466b09_3",
+  "files": [
+    "Library/bin/brotli.exe"
+  ],
+  "fn": "brotli-bin-1.1.0-h2466b09_3.conda",
+  "license": "MIT",
+  "link": {
+    "source": "C:\\Users\\Asus\\.conda\\pkgs\\brotli-bin-1.1.0-h2466b09_3",
+    "type": 1
+  },
+  "md5": "c7c345559c1ac25eede6dccb7b931202",
+  "name": "brotli-bin",
+  "package_tarball_full_path": "C:\\Users\\Asus\\.conda\\pkgs\\brotli-bin-1.1.0-h2466b09_3.conda",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "Library/bin/brotli.exe",
+        "path_type": "hardlink",
+        "sha256": "652ad9b8e59a05d8070fc6000dc78df33f9d033c402000e8b5976cee37ccac72",
+        "sha256_in_prefix": "652ad9b8e59a05d8070fc6000dc78df33f9d033c402000e8b5976cee37ccac72",
+        "size_in_bytes": 29184
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "85aac1c50a426be6d0cc9fd52480911d752f4082cb78accfdb257243e572c7eb",
+  "size": 21405,
+  "subdir": "win-64",
+  "timestamp": 1749230949000,
+  "url": "https://conda.anaconda.org/conda-forge/win-64/brotli-bin-1.1.0-h2466b09_3.conda",
+  "version": "1.1.0"
+}

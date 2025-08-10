@@ -1,0 +1,62 @@
+{
+  "build": "h2466b09_3",
+  "build_number": 3,
+  "channel": "https://conda.anaconda.org/conda-forge/win-64",
+  "constrains": [],
+  "depends": [
+    "libbrotlicommon 1.1.0 h2466b09_3",
+    "ucrt >=10.0.20348.0",
+    "vc >=14.2,<15",
+    "vc14_runtime >=14.29.30139"
+  ],
+  "extracted_package_dir": "C:\\Users\\Asus\\.conda\\pkgs\\libbrotlidec-1.1.0-h2466b09_3",
+  "files": [
+    "Library/bin/brotlidec.dll",
+    "Library/lib/brotlidec.lib",
+    "Library/lib/pkgconfig/libbrotlidec.pc"
+  ],
+  "fn": "libbrotlidec-1.1.0-h2466b09_3.conda",
+  "license": "MIT",
+  "link": {
+    "source": "C:\\Users\\Asus\\.conda\\pkgs\\libbrotlidec-1.1.0-h2466b09_3",
+    "type": 1
+  },
+  "md5": "a342933dbc6d814541234c7c81cb5205",
+  "name": "libbrotlidec",
+  "package_tarball_full_path": "C:\\Users\\Asus\\.conda\\pkgs\\libbrotlidec-1.1.0-h2466b09_3.conda",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "Library/bin/brotlidec.dll",
+        "path_type": "hardlink",
+        "sha256": "51d4f5204c4c6cca0ba1281a5b7c70f1643e292575fd38b8ced96ab11778cbf8",
+        "sha256_in_prefix": "51d4f5204c4c6cca0ba1281a5b7c70f1643e292575fd38b8ced96ab11778cbf8",
+        "size_in_bytes": 50688
+      },
+      {
+        "_path": "Library/lib/brotlidec.lib",
+        "path_type": "hardlink",
+        "sha256": "75d61266aba39922b6375bb69fbc264171ade246190e55ed05596bdd7c051724",
+        "sha256_in_prefix": "75d61266aba39922b6375bb69fbc264171ade246190e55ed05596bdd7c051724",
+        "size_in_bytes": 5110
+      },
+      {
+        "_path": "Library/lib/pkgconfig/libbrotlidec.pc",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "D:/bld/brotli-split_1749229870877/_h_env",
+        "sha256": "cba06e0213c367e83e14276322b2dce67d00f3ae8146340eb6ba2258b314f1fc",
+        "sha256_in_prefix": "1c8f36e0d1912e0020c49d70899f6134bb81069c49f9d023fe5e4c30018b951b",
+        "size_in_bytes": 385
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "a35a0db7e3257e011b10ffb371735b2b24074412d0b27c3dab7ca9f2c549cfcf",
+  "size": 33451,
+  "subdir": "win-64",
+  "timestamp": 1749230869000,
+  "url": "https://conda.anaconda.org/conda-forge/win-64/libbrotlidec-1.1.0-h2466b09_3.conda",
+  "version": "1.1.0"
+}

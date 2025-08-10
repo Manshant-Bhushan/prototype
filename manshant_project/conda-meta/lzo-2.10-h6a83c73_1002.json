@@ -1,0 +1,251 @@
+{
+  "build": "h6a83c73_1002",
+  "build_number": 1002,
+  "channel": "https://conda.anaconda.org/conda-forge/win-64",
+  "constrains": [],
+  "depends": [
+    "vc >=14.3,<15",
+    "vc14_runtime >=14.44.35208",
+    "ucrt >=10.0.20348.0"
+  ],
+  "extracted_package_dir": "D:\\Anaconda\\pkgs\\lzo-2.10-h6a83c73_1002",
+  "files": [
+    "Library/bin/lzo2.dll",
+    "Library/include/lzo/lzo1.h",
+    "Library/include/lzo/lzo1a.h",
+    "Library/include/lzo/lzo1b.h",
+    "Library/include/lzo/lzo1c.h",
+    "Library/include/lzo/lzo1f.h",
+    "Library/include/lzo/lzo1x.h",
+    "Library/include/lzo/lzo1y.h",
+    "Library/include/lzo/lzo1z.h",
+    "Library/include/lzo/lzo2a.h",
+    "Library/include/lzo/lzo_asm.h",
+    "Library/include/lzo/lzoconf.h",
+    "Library/include/lzo/lzodefs.h",
+    "Library/include/lzo/lzoutil.h",
+    "Library/lib/lzo2.lib",
+    "Library/lib/lzo2_dllimport.lib",
+    "Library/libexec/lzo/examples/lzopack.exe",
+    "Library/libexec/lzo/examples/lzotest.exe",
+    "Library/libexec/lzo/examples/simple.exe",
+    "Library/libexec/lzo/examples/testmini.exe",
+    "Library/share/doc/lzo/AUTHORS",
+    "Library/share/doc/lzo/COPYING",
+    "Library/share/doc/lzo/LZO.FAQ",
+    "Library/share/doc/lzo/LZO.TXT",
+    "Library/share/doc/lzo/LZOAPI.TXT",
+    "Library/share/doc/lzo/NEWS",
+    "Library/share/doc/lzo/THANKS"
+  ],
+  "fn": "lzo-2.10-h6a83c73_1002.conda",
+  "license": "GPL-2.0-or-later",
+  "link": {
+    "source": "D:\\Anaconda\\pkgs\\lzo-2.10-h6a83c73_1002",
+    "type": 1
+  },
+  "md5": "c5cb4159f0eea65663b31dd1e49bbb71",
+  "name": "lzo",
+  "package_tarball_full_path": "D:\\Anaconda\\pkgs\\lzo-2.10-h6a83c73_1002.conda",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "Library/bin/lzo2.dll",
+        "path_type": "hardlink",
+        "sha256": "37ac880ace8d0df0c64a2c11116cae552a8eeb1a55459c99a477aea4ae03dee0",
+        "sha256_in_prefix": "37ac880ace8d0df0c64a2c11116cae552a8eeb1a55459c99a477aea4ae03dee0",
+        "size_in_bytes": 114688
+      },
+      {
+        "_path": "Library/include/lzo/lzo1.h",
+        "path_type": "hardlink",
+        "sha256": "b155c510a68447c11c8a181c9f99753f07e193d6a66f1b428d9a47f4e4e4ab1b",
+        "sha256_in_prefix": "b155c510a68447c11c8a181c9f99753f07e193d6a66f1b428d9a47f4e4e4ab1b",
+        "size_in_bytes": 2634
+      },
+      {
+        "_path": "Library/include/lzo/lzo1a.h",
+        "path_type": "hardlink",
+        "sha256": "4acdb37a85da89e1a34f774e87b61ee7b5526068bc53e0f81882e9b9fbb306e4",
+        "sha256_in_prefix": "4acdb37a85da89e1a34f774e87b61ee7b5526068bc53e0f81882e9b9fbb306e4",
+        "size_in_bytes": 2638
+      },
+      {
+        "_path": "Library/include/lzo/lzo1b.h",
+        "path_type": "hardlink",
+        "sha256": "015c4448b0331e7605e4121a5848d675c564ea90d1171b56e5384cb94581bd27",
+        "sha256_in_prefix": "015c4448b0331e7605e4121a5848d675c564ea90d1171b56e5384cb94581bd27",
+        "size_in_bytes": 5387
+      },
+      {
+        "_path": "Library/include/lzo/lzo1c.h",
+        "path_type": "hardlink",
+        "sha256": "51ab97926b2303b7eea29794eb0fa0fc31549c2a9c2620ee60f9f5884319f696",
+        "sha256_in_prefix": "51ab97926b2303b7eea29794eb0fa0fc31549c2a9c2620ee60f9f5884319f696",
+        "size_in_bytes": 5384
+      },
+      {
+        "_path": "Library/include/lzo/lzo1f.h",
+        "path_type": "hardlink",
+        "sha256": "80c5e5c3ffafb716c2f611c15b7f90e61889000ec2d51309ccaa26c8ea561af6",
+        "sha256_in_prefix": "80c5e5c3ffafb716c2f611c15b7f90e61889000ec2d51309ccaa26c8ea561af6",
+        "size_in_bytes": 3073
+      },
+      {
+        "_path": "Library/include/lzo/lzo1x.h",
+        "path_type": "hardlink",
+        "sha256": "010e47f9a1fb11611fec58ed71781e6129e2693448afc4dddcfd92110ac807f8",
+        "sha256_in_prefix": "010e47f9a1fb11611fec58ed71781e6129e2693448afc4dddcfd92110ac807f8",
+        "size_in_bytes": 5873
+      },
+      {
+        "_path": "Library/include/lzo/lzo1y.h",
+        "path_type": "hardlink",
+        "sha256": "68774be5bd9e3306b5d6494f965eb5e8ebe594347e89a62f7389bc6c6f962c62",
+        "sha256_in_prefix": "68774be5bd9e3306b5d6494f965eb5e8ebe594347e89a62f7389bc6c6f962c62",
+        "size_in_bytes": 4641
+      },
+      {
+        "_path": "Library/include/lzo/lzo1z.h",
+        "path_type": "hardlink",
+        "sha256": "b488a2c6755984c255d7347dace98ab0f3b105bd44c9d15c8e37d753df948a24",
+        "sha256_in_prefix": "b488a2c6755984c255d7347dace98ab0f3b105bd44c9d15c8e37d753df948a24",
+        "size_in_bytes": 3771
+      },
+      {
+        "_path": "Library/include/lzo/lzo2a.h",
+        "path_type": "hardlink",
+        "sha256": "14ddc3ff6249a2a7146ccd0cebe53615b7e44db70658a754059b9f301cc1a7d2",
+        "sha256_in_prefix": "14ddc3ff6249a2a7146ccd0cebe53615b7e44db70658a754059b9f301cc1a7d2",
+        "size_in_bytes": 2525
+      },
+      {
+        "_path": "Library/include/lzo/lzo_asm.h",
+        "path_type": "hardlink",
+        "sha256": "00e94a0436848d728320d69028f01e6cf21e20f8dc22e248cde35600d4dcc352",
+        "sha256_in_prefix": "00e94a0436848d728320d69028f01e6cf21e20f8dc22e248cde35600d4dcc352",
+        "size_in_bytes": 5566
+      },
+      {
+        "_path": "Library/include/lzo/lzoconf.h",
+        "path_type": "hardlink",
+        "sha256": "63bf0574a0df2fa703060282cc5cfa60d86e73d11b1a5f2faf261ffe6809f99d",
+        "sha256_in_prefix": "63bf0574a0df2fa703060282cc5cfa60d86e73d11b1a5f2faf261ffe6809f99d",
+        "size_in_bytes": 16006
+      },
+      {
+        "_path": "Library/include/lzo/lzodefs.h",
+        "path_type": "hardlink",
+        "sha256": "7cdc24f7d8762f0908b30f4959442798427af8c01c6d925f5594114a45a2a89e",
+        "sha256_in_prefix": "7cdc24f7d8762f0908b30f4959442798427af8c01c6d925f5594114a45a2a89e",
+        "size_in_bytes": 127289
+      },
+      {
+        "_path": "Library/include/lzo/lzoutil.h",
+        "path_type": "hardlink",
+        "sha256": "fa07440382289124b26a59ae39bc824a976047c2adfc19ec9c632286f9d82056",
+        "sha256_in_prefix": "fa07440382289124b26a59ae39bc824a976047c2adfc19ec9c632286f9d82056",
+        "size_in_bytes": 1823
+      },
+      {
+        "_path": "Library/lib/lzo2.lib",
+        "path_type": "hardlink",
+        "sha256": "add4e17704fe805c95bb42a41623b95054984c6b2530ae247542505050a25aa8",
+        "sha256_in_prefix": "add4e17704fe805c95bb42a41623b95054984c6b2530ae247542505050a25aa8",
+        "size_in_bytes": 312530
+      },
+      {
+        "_path": "Library/lib/lzo2_dllimport.lib",
+        "path_type": "hardlink",
+        "sha256": "d0326a04e84c1266ca7924f76b64b714b48b8811f84392ac9ef550d996587530",
+        "sha256_in_prefix": "d0326a04e84c1266ca7924f76b64b714b48b8811f84392ac9ef550d996587530",
+        "size_in_bytes": 21698
+      },
+      {
+        "_path": "Library/libexec/lzo/examples/lzopack.exe",
+        "path_type": "hardlink",
+        "sha256": "0744d3ca6bc97275d58d4947e214a6014dc0113a11e9b8c3559b8f86c8c4b07c",
+        "sha256_in_prefix": "0744d3ca6bc97275d58d4947e214a6014dc0113a11e9b8c3559b8f86c8c4b07c",
+        "size_in_bytes": 30720
+      },
+      {
+        "_path": "Library/libexec/lzo/examples/lzotest.exe",
+        "path_type": "hardlink",
+        "sha256": "90d1d13e04b758e04fc7d96a715c640a95ee5a0a8672dd33af7dc03c95a76778",
+        "sha256_in_prefix": "90d1d13e04b758e04fc7d96a715c640a95ee5a0a8672dd33af7dc03c95a76778",
+        "size_in_bytes": 148992
+      },
+      {
+        "_path": "Library/libexec/lzo/examples/simple.exe",
+        "path_type": "hardlink",
+        "sha256": "21b1def0ffc47c99f64947de624abd39c7cb8edba33bd4ea56deab606a3c44bd",
+        "sha256_in_prefix": "21b1def0ffc47c99f64947de624abd39c7cb8edba33bd4ea56deab606a3c44bd",
+        "size_in_bytes": 16896
+      },
+      {
+        "_path": "Library/libexec/lzo/examples/testmini.exe",
+        "path_type": "hardlink",
+        "sha256": "f28f2d1acc78841d190f940b1b3685dcd20ffc5dfc8fbc450b57da5af8a5e25a",
+        "sha256_in_prefix": "f28f2d1acc78841d190f940b1b3685dcd20ffc5dfc8fbc450b57da5af8a5e25a",
+        "size_in_bytes": 16384
+      },
+      {
+        "_path": "Library/share/doc/lzo/AUTHORS",
+        "path_type": "hardlink",
+        "sha256": "a94f2d3916d2987ae0adc0a8dc641d94beb38e341d543bc956a6c8f0c3151c40",
+        "sha256_in_prefix": "a94f2d3916d2987ae0adc0a8dc641d94beb38e341d543bc956a6c8f0c3151c40",
+        "size_in_bytes": 112
+      },
+      {
+        "_path": "Library/share/doc/lzo/COPYING",
+        "path_type": "hardlink",
+        "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+        "sha256_in_prefix": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+        "size_in_bytes": 18092
+      },
+      {
+        "_path": "Library/share/doc/lzo/LZO.FAQ",
+        "path_type": "hardlink",
+        "sha256": "5b3d9b5455baed5bc84090831263dcbafe97a802b172cb6f5dfed3562d2692af",
+        "sha256_in_prefix": "5b3d9b5455baed5bc84090831263dcbafe97a802b172cb6f5dfed3562d2692af",
+        "size_in_bytes": 7616
+      },
+      {
+        "_path": "Library/share/doc/lzo/LZO.TXT",
+        "path_type": "hardlink",
+        "sha256": "fed74db7884d9fb534a64dec5b585adebf40eda47f67f5ace76450c2335400eb",
+        "sha256_in_prefix": "fed74db7884d9fb534a64dec5b585adebf40eda47f67f5ace76450c2335400eb",
+        "size_in_bytes": 13009
+      },
+      {
+        "_path": "Library/share/doc/lzo/LZOAPI.TXT",
+        "path_type": "hardlink",
+        "sha256": "b70072c5515badae0231ceb817aa89fad48d10d7204d4524a64a2aaba661a7ee",
+        "sha256_in_prefix": "b70072c5515badae0231ceb817aa89fad48d10d7204d4524a64a2aaba661a7ee",
+        "size_in_bytes": 6228
+      },
+      {
+        "_path": "Library/share/doc/lzo/NEWS",
+        "path_type": "hardlink",
+        "sha256": "bd30ea5d28354a0e07c0742e088ddd84eb9830dd3929859d6b5c43cb871939c1",
+        "sha256_in_prefix": "bd30ea5d28354a0e07c0742e088ddd84eb9830dd3929859d6b5c43cb871939c1",
+        "size_in_bytes": 12599
+      },
+      {
+        "_path": "Library/share/doc/lzo/THANKS",
+        "path_type": "hardlink",
+        "sha256": "6e22aa70e4a9da110afa122e3019bbb629b6b21955ec8dc756cb02ab4cdf479d",
+        "sha256_in_prefix": "6e22aa70e4a9da110afa122e3019bbb629b6b21955ec8dc756cb02ab4cdf479d",
+        "size_in_bytes": 690
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "344f4f225c6dfb523fb477995545542224c37a5c86161f053a1a18fe547aa979",
+  "size": 165589,
+  "subdir": "win-64",
+  "timestamp": 1753889311000,
+  "url": "https://conda.anaconda.org/conda-forge/win-64/lzo-2.10-h6a83c73_1002.conda",
+  "version": "2.10"
+}
