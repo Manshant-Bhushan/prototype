@@ -1,0 +1,8 @@
+{
+  "python.analysis.extraPaths": [
+    "./src/pdf_parser",
+    "./src/compliance_engine",
+    "./src/autocad_parser",
+    "./src/gis_processor"
+  ]
+}
