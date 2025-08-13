@@ -147,3 +147,8 @@
 +conda-forge/win-64::zstd-1.5.7-hbeecb71_2
 # update specs: ['geopandas', 'shapely']
 # neutered specs: ['python==3.12.9']
+==> 2025-08-11 01:06:37 <==
+# cmd: D:\Anaconda\Scripts\conda-script.py install -c conda-forge proj-data
+# conda version: 24.11.3
++conda-forge/noarch::proj-data-1.22-h7428d3b_0
+# update specs: ['proj-data']
